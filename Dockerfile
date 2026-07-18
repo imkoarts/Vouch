@@ -13,6 +13,10 @@ COPY pyproject.toml README.md LICENSE alembic.ini ./
 COPY app ./app
 COPY alembic ./alembic
 COPY config ./config
+COPY docs/personal-humanizer ./docs/personal-humanizer
+COPY docs/analyze-personal-voice ./docs/analyze-personal-voice
+COPY scripts/run_external_semantic_holdout_v5.py ./scripts/run_external_semantic_holdout_v5.py
+
 RUN python -m build --wheel --no-isolation --outdir /wheel .
 
 
