@@ -679,13 +679,15 @@ def create_dashboard_router(settings: Settings, engine: Engine) -> APIRouter:
             "fact_check_status": draft.fact_check_status.value,
             "blocking_flags": list(draft.blocking_safety_flags),
             "hash_prefix": str(draft.current_content_hash or "")[:12],
-            "can_edit": status in {
+            "can_edit": status
+            in {
                 DraftStatus.NEEDS_REVIEW,
                 DraftStatus.APPROVED,
                 DraftStatus.REJECTED,
                 DraftStatus.PUBLISH_FAILED,
             },
-            "can_rewrite": status in {
+            "can_rewrite": status
+            in {
                 DraftStatus.NEEDS_REVIEW,
                 DraftStatus.APPROVED,
                 DraftStatus.REJECTED,
@@ -1156,9 +1158,7 @@ def create_dashboard_router(settings: Settings, engine: Engine) -> APIRouter:
                 .order_by(Draft.updated_at.desc())
                 .limit(bounded_limit)
             ).all()
-            return {
-                "items": [serialize_draft(draft, version) for draft, version in rows]
-            }
+            return {"items": [serialize_draft(draft, version) for draft, version in rows]}
 
     @router.put("/api/drafts/{draft_id}")
     def edit_draft(draft_id: str, payload: DraftEditPayload) -> dict[str, Any]:
@@ -1264,9 +1264,7 @@ def create_dashboard_router(settings: Settings, engine: Engine) -> APIRouter:
             "action": preview.action,
             "account_username": preview.account_username,
             "estimated_cost_usd": (
-                str(preview.estimated_cost_usd)
-                if preview.estimated_cost_usd is not None
-                else None
+                str(preview.estimated_cost_usd) if preview.estimated_cost_usd is not None else None
             ),
         }
 

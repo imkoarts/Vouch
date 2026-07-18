@@ -2338,9 +2338,7 @@ class DraftService:
             )
         if factual_report.status == "block":
             reviewable = (
-                _reviewable_factual_codes(factual_report)
-                if operator_requested_generation
-                else None
+                _reviewable_factual_codes(factual_report) if operator_requested_generation else None
             )
             if reviewable is None:
                 issue_codes = tuple(
@@ -2836,12 +2834,8 @@ class DraftService:
         similarity_flags = self._similarity_flags(
             normalized_parts, self._source_data(draft.idea_id)
         )
-        inspection_flags, edit_inspection = self._inspect_edited_content(
-            version, normalized_parts
-        )
-        draft.blocking_safety_flags = list(
-            dict.fromkeys((*similarity_flags, *inspection_flags))
-        )
+        inspection_flags, edit_inspection = self._inspect_edited_content(version, normalized_parts)
+        draft.blocking_safety_flags = list(dict.fromkeys((*similarity_flags, *inspection_flags)))
         raw_factual = edit_inspection.get("factual_inspection")
         if isinstance(raw_factual, dict) and raw_factual.get("status") == "block":
             draft.fact_check_status = FactCheckStatus.FAILED
