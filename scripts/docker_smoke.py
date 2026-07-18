@@ -135,8 +135,7 @@ def wait_for_health(
         time.sleep(1)
 
     raise TimeoutError(
-        f"Docker health endpoint {path} was not ready "
-        f"after {timeout:g}s: {last_probe}"
+        f"Docker health endpoint {path} was not ready after {timeout:g}s: {last_probe}"
     )
 
 
@@ -163,9 +162,7 @@ def assert_runtime_has_no_dev_tools(
     if probe.returncode != 0:
         detail = (probe.stderr or probe.stdout).strip()
 
-        raise RuntimeError(
-            f"Docker runtime dependency isolation failed: {detail}"
-        )
+        raise RuntimeError(f"Docker runtime dependency isolation failed: {detail}")
 
 
 def parse_args() -> argparse.Namespace:
