@@ -1,0 +1,13 @@
+# Project-scoped Codex MCP configuration. No secrets are stored here.
+
+[mcp_servers.x-docs]
+url = "https://docs.x.com/mcp"
+enabled = true
+
+# Optional development-only X API tools. Keep disabled until xurl OAuth2 is
+# configured locally in ~/.xurl. Runtime publication never uses this MCP server.
+[mcp_servers.xapi]
+command = "npx"
+args = ["-y", "@xdevplatform/xurl", "mcp", "https://api.x.com/mcp"]
+enabled = false
+startup_timeout_sec = 300

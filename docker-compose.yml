@@ -1,0 +1,59 @@
+services:
+  bot:
+    profiles: ["live"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      APP_HOST: "127.0.0.1"
+      APP_PORT: "8000"
+      AUTO_PUBLISH: "false"
+      PUBLISH_ENABLED: "${PUBLISH_ENABLED:-false}"
+    # No host port is published by default. If an operator exposes one, Supabase
+    # authentication and CSRF protection are required for a non-loopback bind.
+    volumes:
+      - ./data:/app/data
+      - ./drafts:/app/drafts
+      - ./media:/app/media
+      - ./config:/app/config
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+
+  judge:
+    profiles: ["judge"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      APP_ENV: "test"
+      MOCK_MODE: "true"
+      DATABASE_URL: "sqlite:////app/judge-data/judge.db"
+      DATA_DIR: "/app/judge-data/data"
+      DRAFTS_DIR: "/app/judge-data/drafts"
+      LOGS_DIR: "/app/judge-data/logs"
+      CONFIG_DIR: "/app/config"
+      AUTO_PUBLISH: "false"
+      PUBLISH_ENABLED: "false"
+      TELEGRAM_BOT_TOKEN: ""
+    command: ["python", "-m", "app.cli", "demo", "--output-dir", "/app/judge-data"]
+    volumes:
+      - judge-data:/app/judge-data
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: "no"
+
+volumes:
+  judge-data:

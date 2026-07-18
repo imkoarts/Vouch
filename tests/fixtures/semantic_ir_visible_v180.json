@@ -1,0 +1,52 @@
+{
+  "cases": [
+    {
+      "id": "praise_harmful_target",
+      "source": "A hospital reported ten deaths after the outage.",
+      "reply": "stellar execution from the outage",
+      "expected": "sarcasm"
+    },
+    {
+      "id": "literal_praise_positive_target",
+      "source": "The response team safely restored power and completed recovery.",
+      "reply": "excellent work from the response team",
+      "expected": "literal_praise"
+    },
+    {
+      "id": "human_death",
+      "source": "Three passengers were pronounced dead after the crash.",
+      "reply": "",
+      "expected": "human_death"
+    },
+    {
+      "id": "critical_condition",
+      "source": "Two workers remain on life support.",
+      "reply": "",
+      "expected": "critical_condition"
+    },
+    {
+      "id": "technical_failure",
+      "source": "The database died during migration.",
+      "reply": "",
+      "expected": "non_human_failure"
+    },
+    {
+      "id": "mixed_failure_and_harm",
+      "source": "The server died. Two patients died during the outage.",
+      "reply": "",
+      "expected": "mixed_human_harm"
+    },
+    {
+      "id": "decorated_identity",
+      "source": "",
+      "reply": "onboarding is paperwork wearing product branding",
+      "expected": "decorated_identity"
+    },
+    {
+      "id": "literal_definition",
+      "source": "",
+      "reply": "a triangle is a polygon with three sides",
+      "expected": "no_shell"
+    }
+  ]
+}

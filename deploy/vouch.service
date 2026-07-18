@@ -1,0 +1,38 @@
+[Unit]
+Description=Vouch local moderation service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=vouch
+Group=vouch
+WorkingDirectory=/opt/vouch
+EnvironmentFile=/etc/vouch/vouch.env
+Environment=PYTHONUNBUFFERED=1
+ExecStartPre=/opt/vouch/.venv/bin/python -m alembic upgrade head
+ExecStart=/usr/bin/env AUTO_PUBLISH=false APP_HOST=127.0.0.1 /opt/vouch/.venv/bin/python -m app.cli serve
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=30s
+KillSignal=SIGINT
+UMask=0077
+
+NoNewPrivileges=true
+PrivateDevices=true
+PrivateTmp=true
+ProtectControlGroups=true
+ProtectHome=true
+ProtectKernelLogs=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+ProtectSystem=strict
+ReadWritePaths=/opt/vouch/data /opt/vouch/drafts /opt/vouch/media /opt/vouch/config
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictRealtime=true
+LockPersonality=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+[Install]
+WantedBy=multi-user.target

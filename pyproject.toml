@@ -1,0 +1,131 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vouch"
+version = "0.19.7"
+description = "Evidence-grounded social drafting with mandatory human approval"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = { text = "MIT" }
+authors = [{ name = "Vouch maintainers" }]
+dependencies = [
+  "alembic>=1.14,<2",
+  "apscheduler>=3.10,<4",
+  "certifi>=2026.6.17,<2027",
+  "fastapi>=0.115,<1",
+  "httpx>=0.27,<1",
+  "openai>=2.45,<3",
+  # SQLAlchemy accepts PostgreSQL DATABASE_URL values; keep its runtime driver locked.
+  "psycopg[binary]>=3.2,<4",
+  "pydantic>=2.10,<3",
+  "pydantic-settings>=2.7,<3",
+  "PyYAML>=6.0,<7",
+  "sqlalchemy>=2.0,<3",
+  "structlog>=24.4,<26",
+  "typer>=0.15,<1",
+  "uvicorn>=0.34,<1",
+]
+
+[project.optional-dependencies]
+desktop = [
+  "pywebview>=6.2,<7",
+]
+exe = [
+  "pyinstaller>=6.21,<7",
+]
+dev = [
+  "build>=1.2,<2",
+  "hatchling==1.27.0",
+  "mypy>=1.14,<2",
+  "pip-audit>=2.10,<3",
+  "pip-tools>=7.5,<8",
+  "pre-commit>=4.0,<5",
+  "pytest>=8.3,<9",
+  "pytest-asyncio>=0.25,<2",
+  "respx>=0.22,<1",
+  "ruff>=0.9,<1",
+  "types-PyYAML>=6.0,<7",
+]
+
+[project.scripts]
+vouch = "app.cli:run"
+vouch-semantic-holdout = "app.semantic_holdout_cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"alembic.ini" = "app/_bundled/alembic.ini"
+"alembic" = "app/_bundled/alembic"
+"config" = "app/_bundled/config"
+"docs/personal-humanizer" = "app/_bundled/personal-humanizer"
+"docs/analyze-personal-voice" = "app/_bundled/analyze-personal-voice"
+"scripts/run_external_semantic_holdout_v5.py" = "app/_bundled/run_external_semantic_holdout_v5.py"
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers -p no:ddtrace -p no:ddtrace.pytest_bdd -p no:ddtrace.pytest_benchmark"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+  "integration: exercises multiple local components",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = [
+  ".demo-test*",
+  ".mypy_cache",
+  ".playwright-runtime",
+  ".pytest_cache",
+  ".ruff_cache",
+  ".venv",
+  ".venv-broken",
+  ".wheel-smoke*",
+  ".ui-qa",
+  ".release-smoke",
+  "alembic/versions",
+  "build",
+  "dist",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF", "S", "ASYNC"]
+ignore = ["S104"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "S105", "S106"]
+"app/web/routes/**/*.py" = ["B008"]
+"app/telegram/**/*.py" = ["RUF001"]
+"app/services/humanizer.py" = ["RUF001"]
+"tests/unit/test_humanizer.py" = ["RUF001"]
+"tests/unit/test_telegram_helpers.py" = ["RUF001"]
+"tests/unit/test_telegram_review.py" = ["RUF001"]
+"tests/unit/test_provider_features.py" = ["RUF001"]
+"tests/unit/test_image_generation.py" = ["RUF001"]
+"launcher.py" = ["RUF001", "S603"]
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+plugins = ["pydantic.mypy"]
+exclude = ["alembic/versions"]
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+warn_required_dynamic_aliases = true

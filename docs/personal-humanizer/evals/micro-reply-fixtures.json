@@ -1,0 +1,1318 @@
+[
+  {
+    "id": "plain_observation_preferred",
+    "mode": "X_REPLY_MICRO",
+    "source": "The social manager handles ten other jobs and has no budget.",
+    "draft": "half the time the social manager is good, they just gave them 10 other jobs and no budget",
+    "angle_type": "plain_update",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "question_is_valid",
+    "mode": "X_REPLY_MICRO",
+    "source": "The export includes scores but does not say whether test cases are included.",
+    "draft": "do the test cases come with the export, or just the scores?",
+    "angle_type": "specific_question",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "qualification_is_valid",
+    "mode": "X_REPLY_MICRO",
+    "source": "Automation can replace the posting step, while editorial judgment remains manual.",
+    "draft": "maybe the posting part, but not the judgment about what is worth saying",
+    "angle_type": "skeptical_caveat",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "direct_disagreement_is_valid",
+    "mode": "X_REPLY_MICRO",
+    "source": "The post claims automation replaces all social media work.",
+    "draft": "i disagree with the all part; posting is not the same job as deciding what matters",
+    "angle_type": "skeptical_caveat",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "twenty_to_thirty_five_words_is_valid",
+    "mode": "X_REPLY_MICRO",
+    "source": "The social manager handles ten other jobs and has no budget.",
+    "draft": "half the time the social manager is good, they just gave them 10 other jobs and no budget",
+    "angle_type": "plain_update",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "two_sentences_when_needed",
+    "mode": "X_REPLY_MICRO",
+    "source": "The model can migrate, but correction history cannot transfer.",
+    "draft": "the model can move. the correction history still cannot, which is the part the team trained",
+    "angle_type": "mechanism",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "short_joke_still_allowed",
+    "mode": "X_REPLY_MICRO",
+    "source": "The model added a low-verbosity setting.",
+    "draft": "finally an official anti-yap switch",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "anti_yap_spaced_form_equivalent",
+    "mode": "X_REPLY_MICRO",
+    "source": "The model added a low verbosity setting.",
+    "draft": "finally an official anti-yap switch",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "explicit_nda_register_shift",
+    "mode": "X_REPLY_MICRO",
+    "source": "A founder broke two NDAs in one tweet.",
+    "draft": "bro broke two NDAs in one tweet",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "unsupported_nda_accusation",
+    "mode": "X_REPLY_MICRO",
+    "source": "A founder disclosed two confidential partnership details in one tweet.",
+    "draft": "bro broke two NDAs in one tweet",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "UNSUPPORTED_FACT"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "reductive_identity_semantic_shell",
+    "mode": "X_REPLY_MICRO",
+    "source": "The product adds more onboarding paperwork.",
+    "draft": "onboarding is basically paperwork in a nicer font",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "nothing_communicates_semantic_shell",
+    "mode": "X_REPLY_MICRO",
+    "source": "The product added six more screens while claiming simplicity.",
+    "draft": "nothing communicates simplicity quite like six more screens",
+    "angle_type": "concise_joke",
+    "recent_posts": [
+      "nothing says product simplicity like six new screens"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "source_specific_dry_reframe",
+    "mode": "X_REPLY_MICRO",
+    "source": "Two accounts both posted solana summer.",
+    "draft": "two independent sources have now confirmed solana summer",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "lowercase_is_optional",
+    "mode": "X_REPLY_MICRO",
+    "source": "The export includes scores but does not include test cases.",
+    "draft": "The scores are useful, but the missing test cases still block a rerun.",
+    "angle_type": "plain_update",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "mandatory_punchline",
+    "mode": "X_REPLY_MICRO",
+    "source": "Hungary removed President Sulyok as part of dismantling Orbán's influence.",
+    "draft": "presidential removal, achievement unlocked",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "PUNCHLINE_COMPULSION"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "quote_card_reply",
+    "mode": "X_REPLY_MICRO",
+    "source": "A company gave social media work to an overloaded employee.",
+    "draft": "brands will build the future then hand the account to whoever is least busy",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "repeated_finally_shell",
+    "mode": "X_REPLY_MICRO",
+    "source": "The app added a mute setting.",
+    "draft": "finally an official notification mute switch",
+    "angle_type": "concise_joke",
+    "recent_posts": [
+      "finally an official anti-yap switch"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "repeated_x_is_just_y",
+    "mode": "X_REPLY_MICRO",
+    "source": "The product adds extra steps to account setup.",
+    "draft": "onboarding is just paperwork with extra steps",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "repeated_nothing_says",
+    "mode": "X_REPLY_MICRO",
+    "source": "The company cut support while calling the change customer-first.",
+    "draft": "nothing says customer-first like cutting support",
+    "angle_type": "concise_joke",
+    "recent_posts": [
+      "nothing says simple like adding six menus"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "PUNCHLINE_COMPULSION"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "recent_setup_twist_reuse",
+    "mode": "X_REPLY_MICRO",
+    "source": "The team built the product but gave marketing no budget.",
+    "draft": "they built the product, but apparently marketing can run on fumes",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "they shipped the feature, but apparently support can run on fumes"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "false_brevity",
+    "mode": "X_REPLY_MICRO",
+    "source": "The plan works only when a human reviews the result.",
+    "draft": "works. mostly:",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "FALSE_BREVITY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "joke_label_without_function",
+    "mode": "X_REPLY_MICRO",
+    "source": "Hungary removed President Sulyok as part of dismantling Orbán's influence.",
+    "draft": "anti-Orbán campaign speedrun",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "PUNCHLINE_COMPULSION"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "wordplay_marker_source_echo",
+    "mode": "X_REPLY_MICRO",
+    "source": "Hungary removed President Sulyok as part of dismantling Orbán's influence.",
+    "draft": "removing the president, but call it a rebrand",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "PUNCHLINE_COMPULSION"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "generic_reply_reusable_under_unrelated_sources",
+    "mode": "X_REPLY_MICRO",
+    "source": "A product launch was delayed.",
+    "draft": "bold strategy, let's see how that works out",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "PUNCHLINE_COMPULSION",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "humor_on_death",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "the outage is doing heroic amounts of work",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "humor_on_serious_injury",
+    "mode": "X_REPLY_MICRO",
+    "source": "The earthquake left hundreds injured.",
+    "draft": "infrastructure speedrun",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "humor_on_medical_emergency",
+    "mode": "X_REPLY_MICRO",
+    "source": "A patient suffered cardiac arrest during the outage.",
+    "draft": "the outage is really committed to the bit",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "humor_targets_victim",
+    "mode": "X_REPLY_MICRO",
+    "source": "A missing child was found dead.",
+    "draft": "plot twist nobody needed",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "source_specific_but_unsuitable_callback",
+    "mode": "X_REPLY_MICRO",
+    "source": "Five people died in the crash.",
+    "draft": "traffic really committed to the bit",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "boils_down_matches_is_just",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding boils down to paperwork in a nicer font",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "comes_down_to_matches_amounts_to",
+    "mode": "X_REPLY_MICRO",
+    "source": "Compliance added another dashboard.",
+    "draft": "compliance comes down to paperwork with a dashboard",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "onboarding amounts to paperwork with a progress bar"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "few_things_communicate_matches_nothing_says",
+    "mode": "X_REPLY_MICRO",
+    "source": "The company added six approval screens.",
+    "draft": "few things communicate simplicity better than six more screens",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "nothing says simplicity like six screens"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "apparently_identity_matches_turns_out_reveal",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding now includes more paperwork.",
+    "draft": "apparently onboarding is paperwork in product copy",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "turns out onboarding was just paperwork"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "decorative_font_matches_progress_bar",
+    "mode": "X_REPLY_MICRO",
+    "source": "The workflow added another layer.",
+    "draft": "the workflow is paperwork in a nicer font",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "onboarding is paperwork with a progress bar"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "fresh_plain_observation_v372",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding now includes six more screens.",
+    "draft": "six more screens make onboarding slower for the people using it",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "onboarding is just paperwork with extra steps"
+    ],
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "single_isolated_shell_not_auto_blocked_v372",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding boils down to paperwork in a nicer font",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "same_source_nouns_but_different_structure_v372",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding now includes six more screens.",
+    "draft": "the six new screens slow onboarding down",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "onboarding is just paperwork with extra steps"
+    ],
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "tragedy_joke_mislabeled_plain",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "the outage is doing heroic amounts of work",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "lost_their_lives",
+    "mode": "X_REPLY_MICRO",
+    "source": "Ten people lost their lives after the outage.",
+    "draft": "the outage really committed to the bit",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "passed_away",
+    "mode": "X_REPLY_MICRO",
+    "source": "The founder passed away after a medical emergency.",
+    "draft": "plot twist nobody needed",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "wounded",
+    "mode": "X_REPLY_MICRO",
+    "source": "The attack left twenty people wounded.",
+    "draft": "the attack really committed to the bit",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "explosion_with_injuries",
+    "mode": "X_REPLY_MICRO",
+    "source": "An explosion injured dozens of workers.",
+    "draft": "safety protocol achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "software_crash_not_tragedy",
+    "mode": "X_REPLY_MICRO",
+    "source": "The app crash was fixed in version 2.1.",
+    "draft": "finally an update that fixes the actual crash",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "market_crash_not_tragedy",
+    "mode": "X_REPLY_MICRO",
+    "source": "The market crash erased the morning gains.",
+    "draft": "the charts really committed to the bit",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "nothing_screams_matches_nothing_says",
+    "mode": "X_REPLY_MICRO",
+    "source": "The company added eight approval screens.",
+    "draft": "nothing screams simplicity like eight screens",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "nothing says simplicity like six screens"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "better_branding_matches_reductive_identity",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding now includes more paperwork.",
+    "draft": "onboarding is paperwork with better branding",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "translated_shell_matches_reductive_identity",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding now includes more paperwork.",
+    "draft": "onboarding, translated: paperwork with a progress bar",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "same_thing_just_with_matches_reductive_identity",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding now includes more paperwork.",
+    "draft": "onboarding is the same thing as paperwork, just with nicer copy",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE",
+      "QUOTE_CARD_REPLY"
+    ],
+    "expected_pass": true
+  },
+  {
+    "id": "sarcastic_really_delivered",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "the outage really delivered",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "sarcastic_love_that_for",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "love that for the hospital",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "sarcastic_excellent_work",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "excellent work from the outage",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "sarcastic_mission_accomplished",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "mission accomplished",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "literal_positive_evaluation_not_sarcasm",
+    "mode": "X_REPLY_MICRO",
+    "source": "The response team restored every hospital service safely.",
+    "draft": "excellent work from the response team",
+    "angle_type": "plain_update",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "claimed_lives",
+    "mode": "X_REPLY_MICRO",
+    "source": "The outage claimed ten lives.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "lives_were_lost",
+    "mode": "X_REPLY_MICRO",
+    "source": "Ten lives were lost after the outage.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "succumbed_to_injuries",
+    "mode": "X_REPLY_MICRO",
+    "source": "Three people succumbed to their injuries.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "did_not_survive",
+    "mode": "X_REPLY_MICRO",
+    "source": "Two workers did not survive.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "fighting_for_life",
+    "mode": "X_REPLY_MICRO",
+    "source": "The incident left a worker fighting for his life.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "dead_code_not_tragedy",
+    "mode": "X_REPLY_MICRO",
+    "source": "Dead code was removed.",
+    "draft": "dead code has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "dead_link_not_tragedy",
+    "mode": "X_REPLY_MICRO",
+    "source": "The dead link was fixed.",
+    "draft": "the dead link has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "process_died_not_tragedy",
+    "mode": "X_REPLY_MICRO",
+    "source": "The browser process died.",
+    "draft": "the browser process has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "killed_worker_process_not_tragedy",
+    "mode": "X_REPLY_MICRO",
+    "source": "The API killed the worker process.",
+    "draft": "the worker process has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "killed_engagement_not_tragedy",
+    "mode": "X_REPLY_MICRO",
+    "source": "The campaign killed engagement.",
+    "draft": "engagement has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "dead_deal_not_tragedy",
+    "mode": "X_REPLY_MICRO",
+    "source": "The deal is dead.",
+    "draft": "the deal has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": [],
+    "expected_pass": true
+  },
+  {
+    "id": "dressed_up_as_matches_reductive_identity",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding is paperwork dressed up as product strategy",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "under_new_name_matches_reductive_identity",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding is paperwork under a new name",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "call_it_what_it_is_matches_reduction",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "call onboarding what it is: paperwork with a progress bar",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "as_it_turns_out_matches_reveal",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "as it turns out, onboarding is paperwork",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "turns out onboarding was just paperwork"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "humor_intent_uncertain_sensitive",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "great job, weather",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_INTENT_UNCERTAIN"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "sarcastic_nice_work_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "nice work from the outage",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "sarcastic_exactly_needed_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "exactly what the hospital needed",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "sarcastic_rating_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "10/10 execution from the outage",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "sarcastic_reward_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "the outage earned employee of the month",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY",
+      "REPLY_TYPE_MISMATCH"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "no_survivors_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "There were no survivors after the crash.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "fatally_injured_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "Ten people were fatally injured.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "mortal_injuries_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "The victim suffered mortal injuries.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "bodies_recovered_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "Ten bodies were recovered after the collapse.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "critical_condition_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "A worker was left in critical condition.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "lifeless_child_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "A child was found lifeless.",
+    "draft": "achievement unlocked",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "product_died_not_tragedy_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "The product died overnight.",
+    "draft": "the roadmap has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": []
+  },
+  {
+    "id": "deal_killed_not_tragedy_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "The deal was killed by regulators.",
+    "draft": "the deal has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": []
+  },
+  {
+    "id": "token_died_not_tragedy_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "The token died after liquidity vanished.",
+    "draft": "liquidity has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": []
+  },
+  {
+    "id": "cosplaying_matches_reduction_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding is paperwork cosplaying as product strategy",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "suffix_rebrand_matches_reduction_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding is paperwork, rebranded",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "equals_plus_matches_reduction_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding equals paperwork plus a progress bar",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "strip_colon_matches_reduction_v175",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "strip away the branding: onboarding is paperwork",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "great_timing_sarcasm_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "great timing from the outage",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "applause_sarcasm_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "a round of applause for the outage",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "five_stars_sarcasm_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported 10 deaths after the outage.",
+    "draft": "five stars for the outage",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "declared_deceased_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "Three workers were declared deceased.",
+    "draft": "achievement unlocked",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "coma_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "The worker remains in a coma.",
+    "draft": "achievement unlocked",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "life_support_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "The incident left ten people on life support.",
+    "draft": "achievement unlocked",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "pipeline_died_not_tragedy_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "The pipeline died overnight.",
+    "draft": "the pipeline has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": []
+  },
+  {
+    "id": "bill_killed_not_tragedy_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "The bill was killed in committee.",
+    "draft": "the bill has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": []
+  },
+  {
+    "id": "launch_dead_not_tragedy_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "The launch was dead on arrival.",
+    "draft": "the launch has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": []
+  },
+  {
+    "id": "glorified_matches_reduction_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding is glorified paperwork",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "in_disguise_matches_reduction_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding is paperwork in disguise",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "better_branding_matches_reduction_v176",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding: paperwork with better branding",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "semantic_ir_praise_harm_v180",
+    "mode": "X_REPLY_MICRO",
+    "source": "A hospital reported ten deaths after the outage.",
+    "draft": "stellar execution from the outage",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ]
+  },
+  {
+    "id": "semantic_ir_literal_praise_v180",
+    "mode": "X_REPLY_MICRO",
+    "source": "The response team safely restored power and completed recovery.",
+    "draft": "excellent work from the response team",
+    "angle_type": "plain_update",
+    "expected_issues": []
+  },
+  {
+    "id": "semantic_ir_nonhuman_deployment_v180",
+    "mode": "X_REPLY_MICRO",
+    "source": "The deployment died after the rollback.",
+    "draft": "the deployment has left the chat",
+    "angle_type": "concise_joke",
+    "expected_issues": []
+  },
+  {
+    "id": "semantic_ir_mixed_harm_v180",
+    "mode": "X_REPLY_MICRO",
+    "source": "The database died. Three nurses died during the outage.",
+    "draft": "five stars for the outage",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ]
+  },
+  {
+    "id": "semantic_ir_makeover_shell_v180",
+    "mode": "X_REPLY_MICRO",
+    "source": "Onboarding added more paperwork.",
+    "draft": "onboarding is paperwork with a makeover",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "fundraising is just sales with extra steps"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "semantic_ir_literal_definition_control_v180",
+    "mode": "X_REPLY_MICRO",
+    "source": "A checksum detects data errors.",
+    "draft": "a checksum is a value used to detect data errors",
+    "angle_type": "plain_update",
+    "expected_issues": []
+  },
+  {
+    "id": "composition_unresolved_harm_coverage_v181",
+    "mode": "X_REPLY_MICRO",
+    "source": "Two clinicians were incapacitated after the blast.",
+    "draft": "achievement unlocked",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "composition_unresolved_evaluation_v181",
+    "mode": "X_REPLY_MICRO",
+    "source": "A clinic reported deaths after a power failure.",
+    "draft": "remarkable from that system",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_INTENT_UNCERTAIN",
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "composition_setup_twist_reuse_v181",
+    "mode": "X_REPLY_MICRO",
+    "source": "The handoff changed the project plan.",
+    "draft": "the process looked simple, but the handoff became the project",
+    "angle_type": "plain_update",
+    "recent_posts": [
+      "compliance, but make it onboarding"
+    ],
+    "expected_issues": [
+      "RECENT_SYNTAX_REUSE"
+    ]
+  },
+  {
+    "id": "human_result_state_unknown_v190_rc2",
+    "mode": "X_REPLY_MICRO",
+    "source": "The collision left three passengers glassy-eyed and barely rousable.",
+    "draft": "achievement unlocked",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "human_result_state_typed_v190_rc2",
+    "mode": "X_REPLY_MICRO",
+    "source": "The impact left a passenger barely conscious.",
+    "draft": "five stars for the impact",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "human_result_state_location_control_v190_rc2",
+    "mode": "X_REPLY_MICRO",
+    "source": "The delay left two users waiting outside.",
+    "draft": "the queue got an outdoor expansion pack",
+    "angle_type": "concise_joke",
+    "expected_issues": []
+  },
+  {
+    "id": "clause_local_mixed_event_v191",
+    "mode": "X_REPLY_MICRO",
+    "source": "The telemetry relay died, and the spill left two operators disoriented and unable to stand.",
+    "draft": "excellent work from the incident",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "fatal_source_incomplete_reply_v191",
+    "mode": "X_REPLY_MICRO",
+    "source": "A clinic reported nine deaths after the blackout.",
+    "draft": "a ceremonial token for the blackout",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_INTENT_UNCERTAIN",
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "result_state_interface_control_v191",
+    "mode": "X_REPLY_MICRO",
+    "source": "The rollout left two users unable to locate the export button.",
+    "draft": "the export moved again",
+    "angle_type": "plain_update",
+    "expected_issues": []
+  },
+  {
+    "id": "ordinary_human_activity_control_v193",
+    "mode": "X_REPLY_MICRO",
+    "source": "The delay left two riders waiting under the shelter.",
+    "draft": "the shelter became the waiting room",
+    "angle_type": "plain_update",
+    "expected_issues": []
+  },
+  {
+    "id": "possible_harm_source_evaluation_v193",
+    "mode": "X_REPLY_MICRO",
+    "source": "The impact left two riders unable to keep their balance.",
+    "draft": "what a triumph for the response team",
+    "angle_type": "concise_joke",
+    "expected_issues": [
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "bare_fragment_fatal_source_v193",
+    "mode": "X_REPLY_MICRO",
+    "source": "A clinic reported five deaths after the outage.",
+    "draft": "a ceremonial marker for the control unit",
+    "angle_type": "plain_update",
+    "expected_issues": [
+      "HUMOR_INTENT_UNCERTAIN",
+      "HUMOR_ON_TRAGEDY"
+    ],
+    "expected_pass": false
+  },
+  {
+    "id": "action_recommendation_control_v193",
+    "mode": "X_REPLY_MICRO",
+    "source": "A clinic reported five deaths after the outage.",
+    "draft": "the response should focus on the people affected",
+    "angle_type": "skeptical_caveat",
+    "expected_issues": []
+  },
+  {
+    "id": "evidential_status_control_v193",
+    "mode": "X_REPLY_MICRO",
+    "source": "A clinic reported five deaths after the outage.",
+    "draft": "the failure sequence remains under review",
+    "angle_type": "skeptical_caveat",
+    "expected_issues": []
+  }
+]

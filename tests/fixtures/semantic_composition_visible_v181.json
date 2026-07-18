@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "cases": [
+    {
+      "id": "aligned_praise_harmful_event",
+      "source": "A clinic reported three deaths after the power failure.",
+      "reply": "full marks for the failure",
+      "expect": {"literal_harm": true, "implicit_sarcasm": true}
+    },
+    {
+      "id": "literal_praise_positive_event",
+      "source": "The clinic restored power safely and completed recovery.",
+      "reply": "strong work from the response team",
+      "expect": {"literal_harm": false, "implicit_sarcasm": false}
+    },
+    {
+      "id": "human_death_relation",
+      "source": "Two passengers died after the collision.",
+      "reply": "",
+      "expect": {"harm_state": "death", "harm_referent": "human"}
+    },
+    {
+      "id": "critical_condition_relation",
+      "source": "A patient remains in critical condition.",
+      "reply": "",
+      "expect": {"harm_state": "critical_condition", "harm_referent": "human"}
+    },
+    {
+      "id": "technical_failure_relation",
+      "source": "The deployment pipeline died overnight.",
+      "reply": "",
+      "expect": {"harm_state": "non_human_failure", "harm_referent": "non_human"}
+    },
+    {
+      "id": "mixed_harm_relation",
+      "source": "The database died. Two nurses died during the interruption.",
+      "reply": "",
+      "expect": {"harm_state": "death", "harm_referent": "human"}
+    },
+    {
+      "id": "decorated_identity_relation",
+      "source": "",
+      "reply": "compliance is paperwork in a polished wrapper",
+      "expect": {"shell_operator": "decorated_identity"}
+    },
+    {
+      "id": "literal_definition_control",
+      "source": "",
+      "reply": "a hexagon is a polygon with six sides",
+      "expect": {"shell_operator": "none"}
+    }
+  ]
+}

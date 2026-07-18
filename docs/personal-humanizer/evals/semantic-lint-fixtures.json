@@ -1,0 +1,210 @@
+[
+  {
+    "id": "lint_01_announcement",
+    "mode": "X_POST",
+    "draft": "The interesting part is that renewals fell after the price increase.",
+    "expected_issues": [
+      "ANNOUNCEMENT_BEFORE_CONTENT"
+    ],
+    "acceptable_revision": "Renewals fell after the price increase."
+  },
+  {
+    "id": "lint_02_importance_announcement",
+    "mode": "X_REPLY_MICRO",
+    "draft": "the uncomfortable truth is that the export still uses their schema",
+    "expected_issues": [
+      "IMPORTANCE_ANNOUNCEMENT"
+    ],
+    "acceptable_revision": "the export still uses their schema"
+  },
+  {
+    "id": "lint_03_insight_preview",
+    "mode": "X_POST",
+    "draft": "Here is why this matters: the customer cannot export the eval cases.",
+    "expected_issues": [
+      "INSIGHT_PREVIEW"
+    ],
+    "acceptable_revision": "The customer cannot export the eval cases."
+  },
+  {
+    "id": "lint_04_false_agency",
+    "mode": "X_POST",
+    "draft": "The market decided the feature was unnecessary.",
+    "evidence": [
+      "Customers stopped renewing after the feature launched."
+    ],
+    "expected_issues": [
+      "FALSE_AGENCY",
+      "HIDDEN_ACTOR"
+    ]
+  },
+  {
+    "id": "lint_05_actorless_causality",
+    "mode": "X_POST",
+    "draft": "The decision emerged after several meetings.",
+    "evidence": [
+      "The product team made the decision after several meetings."
+    ],
+    "expected_issues": [
+      "ACTORLESS_CAUSALITY",
+      "HIDDEN_ACTOR"
+    ]
+  },
+  {
+    "id": "lint_06_accurate_api_subject_control",
+    "mode": "X_REPLY_MICRO",
+    "draft": "the api returned the same error twice",
+    "expected_issues": []
+  },
+  {
+    "id": "lint_07_unknown_actor_passive_control",
+    "mode": "X_POST",
+    "draft": "Three accounts were suspended overnight.",
+    "evidence": [
+      "The source does not identify who suspended the accounts."
+    ],
+    "expected_issues": []
+  },
+  {
+    "id": "lint_08_narrator_distance",
+    "mode": "X_POST",
+    "draft": "People always choose convenience over control.",
+    "expected_issues": [
+      "NARRATOR_DISTANCE",
+      "ARMCHAIR_GENERALIZATION"
+    ]
+  },
+  {
+    "id": "lint_09_forced_you_control",
+    "mode": "REWRITE",
+    "draft": "You always accept the default setting.",
+    "evidence": [
+      "The study says most participants retained the default."
+    ],
+    "expected_issues": [
+      "ARMCHAIR_GENERALIZATION"
+    ]
+  },
+  {
+    "id": "lint_10_scoped_group_control",
+    "mode": "X_POST",
+    "draft": "Most participants kept the default setting.",
+    "evidence": [
+      "82% of participants retained the default."
+    ],
+    "expected_issues": []
+  },
+  {
+    "id": "lint_11_unasked_reassurance",
+    "mode": "PROFESSIONAL",
+    "draft": "The first draft may be rough, and that is okay.",
+    "expected_issues": [
+      "UNASKED_REASSURANCE"
+    ]
+  },
+  {
+    "id": "lint_12_permission_ending",
+    "mode": "X_LONG_POST",
+    "draft": "You can leave the conclusion unresolved. Not every post needs a lesson, and that is okay.",
+    "expected_issues": [
+      "PERMISSION_GRANTING_ENDING",
+      "CUTTABILITY_FAILURE"
+    ]
+  },
+  {
+    "id": "lint_13_support_context_control",
+    "mode": "EMAIL_OR_DM",
+    "draft": "You do not need to reply today. Take the time you need.",
+    "context": "Message to a grieving colleague.",
+    "expected_issues": []
+  },
+  {
+    "id": "lint_14_sentence_without_job",
+    "mode": "X_POST",
+    "draft": "The clause covers training. This distinction matters. It does not define export rights.",
+    "expected_issues": [
+      "SENTENCE_WITHOUT_JOB",
+      "CUTTABILITY_FAILURE"
+    ]
+  },
+  {
+    "id": "lint_15_explanation_after_joke",
+    "mode": "X_REPLY_MICRO",
+    "draft": "finally an official anti-yap switch. this is funny because models often talk too much",
+    "expected_issues": [
+      "EXPLANATION_AFTER_PUNCHLINE",
+      "CUTTABILITY_FAILURE"
+    ]
+  },
+  {
+    "id": "lint_16_punchline_control",
+    "mode": "X_REPLY_MICRO",
+    "draft": "finally an official anti-yap switch",
+    "expected_issues": []
+  },
+  {
+    "id": "lint_17_metronomic",
+    "mode": "X_LONG_POST",
+    "draft": "The provider stores the traces. The provider scores the evals. The provider controls the export.",
+    "expected_issues": [
+      "METRONOMIC_RHYTHM"
+    ]
+  },
+  {
+    "id": "lint_18_mechanical_triad",
+    "mode": "X_POST",
+    "draft": "The reply should be direct, concise, and clear.",
+    "expected_issues": [
+      "MECHANICAL_TRIAD"
+    ]
+  },
+  {
+    "id": "lint_19_factual_triad_control",
+    "mode": "PROFESSIONAL",
+    "draft": "The export contains the test case, expected answer, and score.",
+    "evidence": [
+      "All three fields are present and required."
+    ],
+    "expected_issues": []
+  },
+  {
+    "id": "lint_20_question_control",
+    "mode": "X_REPLY_MICRO",
+    "draft": "which accounts were included in the sample?",
+    "context": "The source reports results without defining the sample.",
+    "expected_issues": []
+  },
+  {
+    "id": "lint_21_adverb_control",
+    "mode": "X_POST",
+    "draft": "The claim was independently verified.",
+    "evidence": [
+      "A separate organization verified the claim."
+    ],
+    "expected_issues": []
+  },
+  {
+    "id": "lint_22_em_dash_control",
+    "mode": "X_REPLY_MICRO",
+    "draft": "domestic ip, coordinated behavior — both can be true",
+    "expected_issues": []
+  },
+  {
+    "id": "lint_23_micro_announcement",
+    "mode": "X_REPLY_MICRO",
+    "draft": "the interesting part is that no vpn does not mean no coordination",
+    "expected_issues": [
+      "ANNOUNCEMENT_BEFORE_CONTENT"
+    ],
+    "acceptable_revision": "no vpn still doesn’t mean no coordination"
+  },
+  {
+    "id": "lint_24_micro_distance",
+    "mode": "X_REPLY_MICRO",
+    "draft": "people always confuse where traffic came from with who was behind it",
+    "expected_issues": [
+      "NARRATOR_DISTANCE",
+      "ARMCHAIR_GENERALIZATION"
+    ]
+  }
+]

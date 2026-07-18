@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Vouch — local editorial workspace</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/app.css?v=0197e">
+  <link rel="stylesheet" href="/assets/design.css?v=0197e">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><img src="/assets/vouch-mark.svg" alt=""></div>
+        <div class="brand-copy">
+          <strong>Vouch</strong>
+          <span id="version-label">Local workspace</span>
+        </div>
+      </div>
+
+      <div class="sidebar-spacer"></div>
+
+      <nav class="nav-list" aria-label="Primary navigation">
+        <button class="nav-button is-active" data-page="chat" type="button">
+          <span class="nav-icon" aria-hidden="true">01</span><span>Command desk</span>
+        </button>
+        <button class="nav-button" data-page="settings" type="button">
+          <span class="nav-icon" aria-hidden="true">02</span><span>Settings</span>
+        </button>
+        <button class="nav-button" data-page="accounts" type="button">
+          <span class="nav-icon" aria-hidden="true">03</span><span>Sources</span>
+        </button>
+      </nav>
+    </aside>
+
+    <main class="workspace">
+      <header class="workspace-header">
+        <div>
+          <p class="eyebrow" id="page-eyebrow">WORKSPACE</p>
+          <h1 id="page-title">Command desk</h1>
+        </div>
+        <div class="header-actions">
+          <span class="pill" id="desktop-pill" hidden>Desktop</span>
+          <button class="icon-button" id="refresh-button" type="button" title="Refresh" aria-label="Refresh">↻</button>
+          <div class="profile-menu-wrap">
+            <button class="profile-button" id="profile-menu-button" type="button" aria-haspopup="menu" aria-expanded="false"><span id="profile-initial">V</span><span class="profile-button-copy"><strong>Workspace</strong><small id="profile-email">Local account</small></span><span aria-hidden="true">⌄</span></button>
+            <div class="profile-popover" id="profile-popover" role="menu" hidden>
+              <div class="profile-popover-head"><strong id="profile-popover-email">Vouch account</strong><small>Private local workspace</small></div>
+              <button type="button" data-profile-action="settings" role="menuitem">Settings</button>
+              <button type="button" data-profile-action="voice" role="menuitem">Shape your voice</button>
+              <button type="button" data-profile-action="logout" role="menuitem">Log out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="page is-visible" id="page-chat" data-page-panel="chat">
+        <div class="chat-layout">
+          <div class="chat-intro">
+            <div class="chat-orb" aria-hidden="true"><img src="/assets/vouch-mark.svg" alt=""></div>
+            <div>
+              <h2>Turn source signals into accountable drafts.</h2>
+              <p>Vouch reads, ranks and drafts. You remain the only approval and publication authority.</p>
+            </div>
+          </div>
+          <section class="draft-review" id="draft-review" aria-labelledby="draft-review-title" hidden>
+            <div class="draft-review-heading">
+              <div>
+                <p class="eyebrow">READY FOR HUMAN REVIEW</p>
+                <h3 id="draft-review-title">Generated drafts</h3>
+              </div>
+              <span id="draft-review-count"></span>
+            </div>
+            <div class="draft-review-list" id="draft-review-list"></div>
+          </section>
+          <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+          <form class="composer" id="chat-form">
+            <textarea id="chat-input" rows="1" maxlength="500" placeholder="Type /help or /new https://x.com/user/status/..."></textarea>
+            <button class="primary-button composer-send" id="chat-send" type="submit">Send</button>
+          </form>
+          <div class="command-hints">
+            <button type="button" data-command="/status">/status</button>
+            <button type="button" data-command="/discover">/discover</button>
+            <button type="button" data-command="/new ">/new link</button>
+            <button type="button" data-command="/accounts">/accounts</button>
+          </div>
+        </div>
+      </section>
+
+      <dialog class="settings-dialog" id="settings-dialog">
+      <section class="page settings-page is-visible" id="page-settings" data-page-panel="settings">
+        <div class="settings-shell">
+          <aside class="settings-sidebar">
+            <p class="settings-label">APP SETTINGS</p>
+            <button class="settings-nav-button is-active" data-settings-section="general" type="button">General</button>
+            <button class="settings-nav-button" data-settings-section="ai" type="button">AI & Telegram</button>
+            <button class="settings-nav-button" data-settings-section="sources" type="button">X sources</button>
+            <button class="settings-nav-button" data-settings-section="discovery" type="button">Discovery</button>
+            <button class="settings-nav-button" data-settings-section="publishing" type="button">Publishing</button>
+            <button class="settings-nav-button" data-settings-section="advanced" type="button">Advanced</button>
+          </aside>
+
+          <div class="settings-content">
+            <form id="settings-form" class="settings-form">
+              <div class="settings-topline">
+                <div>
+                  <h2 id="settings-section-title">General</h2>
+                  <p id="settings-section-description">Core generation behavior and presentation.</p>
+                </div>
+                <div class="settings-top-actions"><span class="save-state" id="settings-state">Not loaded</span><button class="dialog-close" id="close-settings" type="button" aria-label="Close settings">×</button></div>
+              </div>
+
+              <section class="settings-section is-visible" data-settings-panel="general">
+                <article class="settings-card account-profile-card">
+                  <div class="card-title"><h3>Account &amp; personal voice</h3><p>Your login, onboarding state, and writing profile used by every generation surface.</p></div>
+                  <div class="account-profile-body">
+                    <div>
+                      <strong id="account-email">Loading account…</strong>
+                      <small id="account-auth-mode">Checking runtime…</small>
+                      <p id="voice-summary">Loading voice profile…</p>
+                    </div>
+                    <div class="account-profile-actions">
+                      <button class="secondary-button" id="analyze-voice" type="button">Re-analyze X voice</button>
+                      <button class="text-button" id="logout-account" type="button">Log out</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="settings-card">
+                  <div class="card-title"><h3>Generation</h3><p>Choose the provider and target post length.</p></div>
+                  <label class="setting-row">
+                    <span><strong>Generation provider</strong><small>Provider used for new drafts.</small></span>
+                    <select id="generation-provider">
+                      <option value="openai">OpenAI</option>
+                      <option value="xai">xAI</option>
+                      <option value="mock">Mock</option>
+                    </select>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Post length</strong><small>Short, medium, or long-form generation.</small></span>
+                    <select id="post-length-mode">
+                      <option value="short">Short</option>
+                      <option value="medium">Medium</option>
+                      <option value="longread">Longread</option>
+                    </select>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Personal Humanizer</strong><small>Apply the bounded style revision stage.</small></span>
+                    <span class="switch"><input id="humanizer-enabled" type="checkbox"><span></span></span>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Image generation</strong><small>Allow configured image generation for supported drafts.</small></span>
+                    <span class="switch"><input id="images-enabled" type="checkbox"><span></span></span>
+                  </label>
+                </article>
+              </section>
+
+              <section class="settings-section" data-settings-panel="ai">
+                <article class="settings-card">
+                  <div class="card-title"><h3>Telegram review</h3><p>Control operator notifications and polling.</p></div>
+                  <label class="setting-row">
+                    <span><strong>Telegram enabled</strong><small>Allow the Telegram review integration.</small></span>
+                    <span class="switch"><input id="telegram-enabled" type="checkbox"><span></span></span>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Start Telegram polling</strong><small>Start polling when the server starts.</small></span>
+                    <span class="switch"><input id="telegram-autostart" type="checkbox"><span></span></span>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Notify on new draft</strong><small>Send newly created drafts to the review chat.</small></span>
+                    <span class="switch"><input id="telegram-notify" type="checkbox"><span></span></span>
+                  </label>
+                </article>
+                <article class="settings-card credential-card">
+                  <div class="card-title"><h3>Credentials</h3><p>Write-only local configuration. Saved values are never returned to the browser; leave a field blank to keep its current value.</p></div>
+                  <div class="credential-grid">
+                    <label class="credential-field"><span>OpenAI API key <small data-credential-status="openai_api_key">Not configured</small></span><input id="credential-openai-api-key" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>xAI API key <small data-credential-status="xai_api_key">Not configured</small></span><input id="credential-xai-api-key" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>X bearer token <small data-credential-status="x_bearer_token">Not configured</small></span><input id="credential-x-bearer-token" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>X consumer key <small data-credential-status="x_consumer_key">Not configured</small></span><input id="credential-x-consumer-key" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>X consumer secret <small data-credential-status="x_consumer_secret">Not configured</small></span><input id="credential-x-consumer-secret" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>X access token <small data-credential-status="x_access_token">Not configured</small></span><input id="credential-x-access-token" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>X access token secret <small data-credential-status="x_access_token_secret">Not configured</small></span><input id="credential-x-access-token-secret" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>X OAuth client ID <small data-credential-status="x_client_id">Not configured</small></span><input id="credential-x-client-id" type="text" autocomplete="off" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>X OAuth client secret <small data-credential-status="x_client_secret">Not configured</small></span><input id="credential-x-client-secret" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>X user ID <small data-credential-status="x_user_id">Not configured</small></span><input id="credential-x-user-id" type="text" autocomplete="off" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>Telegram bot token <small data-credential-status="telegram_bot_token">Not configured</small></span><input id="credential-telegram-token" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                    <label class="credential-field"><span>HeyGen API key <small data-credential-status="heygen_api_key">Not configured</small></span><input id="credential-heygen-api-key" type="password" autocomplete="new-password" placeholder="Keep current value"></label>
+                  </div>
+                  <div class="credential-actions"><span class="save-state" id="credential-state">Values are write-only</span><button class="secondary-button" id="save-credentials" type="button">Save credentials</button></div>
+                </article>
+                <article class="info-card">
+                  <strong>Credentials stay private</strong>
+                  <p>Secrets are stored only in the local <code>.env</code> file, never in the database or API response. Restart Vouch after saving.</p>
+                </article>
+              </section>
+
+              <section class="settings-section" data-settings-panel="sources">
+                <article class="settings-card">
+                  <div class="card-title"><h3>Home timeline</h3><p>Read a small reverse-chronological sample from the authenticated account.</p></div>
+                  <label class="setting-row">
+                    <span><strong>Enabled</strong><small>Use the home timeline as a discovery source.</small></span>
+                    <span class="switch"><input id="home-enabled" type="checkbox"><span></span></span>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Maximum posts</strong><small>Read 1 to 10 posts per discovery run.</small></span>
+                    <input id="home-max-posts" type="number" min="1" max="10" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Exclude replies</strong><small>Ignore replies in timeline samples.</small></span>
+                    <span class="switch"><input id="home-exclude-replies" type="checkbox"><span></span></span>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Exclude reposts</strong><small>Ignore reposts in timeline samples.</small></span>
+                    <span class="switch"><input id="home-exclude-retweets" type="checkbox"><span></span></span>
+                  </label>
+                </article>
+
+                <article class="settings-card">
+                  <div class="card-title"><h3>Manual sources</h3><p>Generate directly from a specific X post supplied by the operator.</p></div>
+                  <label class="setting-row">
+                    <span><strong>Enabled</strong><small>Allow the /new &lt;post URL&gt; chat command.</small></span>
+                    <span class="switch"><input id="manual-sources-enabled" type="checkbox"><span></span></span>
+                  </label>
+                  <div class="command-example">/new https://x.com/account/status/1234567890</div>
+                </article>
+
+                <article class="settings-card">
+                  <div class="card-title"><h3>Evergreen topics</h3><p>Long-lived editorial themes that are not tied to a specific breaking-news moment.</p></div>
+                  <label class="setting-row">
+                    <span><strong>Enabled</strong><small>Keep these topics available as persistent editorial inspiration.</small></span>
+                    <span class="switch"><input id="evergreen-enabled" type="checkbox"><span></span></span>
+                  </label>
+                  <div class="topic-editor">
+                    <div id="evergreen-topic-list" class="topic-list"></div>
+                    <div class="inline-add">
+                      <input id="evergreen-topic-input" type="text" maxlength="200" placeholder="Add an evergreen topic">
+                      <button id="add-evergreen-topic" class="secondary-button" type="button">Add</button>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="disabled-source-card">
+                  <div><strong>Recent Search is disabled</strong><p>The bot does not use the X recent_search endpoint. Trends, home timeline, manual links, and Selected accounts remain available.</p></div>
+                  <span class="disabled-badge">OFF</span>
+                </article>
+              </section>
+
+              <section class="settings-section" data-settings-panel="discovery">
+                <article class="settings-card">
+                  <div class="card-title"><h3>Automatic discovery</h3><p>Scheduled discovery starts after the configured interval, not immediately when the app opens.</p></div>
+                  <label class="setting-row">
+                    <span><strong>Enabled</strong><small>Run bounded discovery on schedule.</small></span>
+                    <span class="switch"><input id="automatic-discovery" type="checkbox"><span></span></span>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Interval</strong><small>How often the discovery cycle runs.</small></span>
+                    <select id="interval-preset">
+                      <option value="1h">Every hour</option>
+                      <option value="3h">Every 3 hours</option>
+                      <option value="6h">Every 6 hours</option>
+                      <option value="12h">Every 12 hours</option>
+                      <option value="custom">Custom</option>
+                    </select>
+                  </label>
+                  <label class="setting-row" id="custom-interval-row">
+                    <span><strong>Custom interval</strong><small>10 to 10,080 minutes.</small></span>
+                    <input id="custom-interval" type="number" min="10" max="10080" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Daily run limit</strong><small>Maximum scheduled runs per UTC day.</small></span>
+                    <input id="max-runs" type="number" min="1" max="144" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Lookback</strong><small>Only consider posts from this many recent hours.</small></span>
+                    <input id="lookback-hours" type="number" min="1" max="168" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Maximum posts</strong><small>Overall source-post cap for one run.</small></span>
+                    <input id="max-total-posts" type="number" min="5" max="30" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Final candidates</strong><small>Highest-ranked source candidates retained before generation.</small></span>
+                    <input id="final-candidates" type="number" min="1" max="10" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Generation attempts</strong><small>Candidate ideas tried without repeating X reads.</small></span>
+                    <input id="generation-candidates" type="number" min="1" max="10" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Trends location ID</strong><small>WOEID used for the official trends signal.</small></span>
+                    <input id="trends-woeid" type="number" min="1" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Maximum trends</strong><small>Read 1 to 10 trend labels per run.</small></span>
+                    <input id="max-trends" type="number" min="1" max="10" step="1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Notify when empty</strong><small>Notify the operator when no candidate is found.</small></span>
+                    <span class="switch"><input id="notify-no-candidate" type="checkbox"><span></span></span>
+                  </label>
+                </article>
+              </section>
+
+              <section class="settings-section" data-settings-panel="publishing">
+                <article class="settings-card">
+                  <div class="card-title"><h3>Manual publishing</h3><p>Publication always requires explicit approval and confirmation.</p></div>
+                  <label class="setting-row">
+                    <span><strong>Manual X publishing</strong><small>Allow approved drafts to be published manually.</small></span>
+                    <span class="switch"><input id="manual-publish-enabled" type="checkbox"><span></span></span>
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Enterprise quote posts</strong><small>Allow quote-post mode only when the X plan supports it.</small></span>
+                    <span class="switch"><input id="enterprise-quotes-enabled" type="checkbox"><span></span></span>
+                  </label>
+                </article>
+                <article class="info-card warning">
+                  <strong>Automatic publishing remains unavailable</strong>
+                  <p>The application creates reviewable drafts only. It never enables automatic X writes.</p>
+                </article>
+              </section>
+
+              <section class="settings-section" data-settings-panel="advanced">
+                <article class="settings-card">
+                  <div class="card-title"><h3>Request pacing</h3><p>Conservative delays for paid and rate-limited APIs.</p></div>
+                  <label class="setting-row">
+                    <span><strong>X request delay</strong><small>Seconds between consecutive X requests.</small></span>
+                    <input id="x-request-delay" type="number" min="0" max="60" step="0.1">
+                  </label>
+                  <label class="setting-row">
+                    <span><strong>Minimum AI interval</strong><small>Minimum seconds between language-model requests.</small></span>
+                    <input id="llm-minimum-interval" type="number" min="0" max="3600" step="0.1">
+                  </label>
+                </article>
+              </section>
+
+              <div class="settings-footer">
+                <p>Saved settings are shared by the web and desktop interfaces.</p>
+                <button class="primary-button" id="save-settings" type="submit">Save changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      </dialog>
+
+      <section class="page" id="page-accounts" data-page-panel="accounts">
+        <div class="accounts-page">
+          <div class="section-heading accounts-heading">
+            <div>
+              <p class="eyebrow">X SOURCES</p>
+              <h2>Selected accounts</h2>
+              <p>Track specific accounts without using Recent Search. Each account can be paused or removed independently.</p>
+            </div>
+            <button class="primary-button add-account-button" id="open-add-account" type="button"><span>＋</span>Add account</button>
+          </div>
+
+          <article class="accounts-control-card">
+            <label class="setting-row">
+              <span><strong>Selected accounts source</strong><small>Include enabled accounts in automatic discovery.</small></span>
+              <span class="switch"><input id="selected-accounts-enabled" type="checkbox"><span></span></span>
+            </label>
+            <label class="setting-row">
+              <span><strong>Posts per account</strong><small>Read 5 to 100 recent posts per enabled account.</small></span>
+              <input id="selected-accounts-max-posts" type="number" min="5" max="100" step="1">
+            </label>
+            <div class="account-settings-actions">
+              <span class="save-state" id="accounts-state">Not loaded</span>
+              <button class="secondary-button" id="save-account-settings" type="button">Save source settings</button>
+            </div>
+          </article>
+
+          <div class="accounts-empty" id="accounts-empty" hidden>
+            <div>◎</div>
+            <strong>No selected accounts</strong>
+            <span>Add an X username or profile URL to begin tracking it.</span>
+          </div>
+          <div class="accounts-list" id="accounts-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="activity-panel">
+      <header class="activity-header">
+        <div>
+          <p class="eyebrow">ACTIVITY</p>
+          <h2>Source feed</h2>
+        </div>
+        <div class="live-indicator"><span></span>Live</div>
+      </header>
+      <div class="progress-card">
+        <div><span>Progress</span><strong id="progress-label">Connecting...</strong></div>
+        <span class="post-count" id="post-count">0</span>
+      </div>
+      <button class="new-posts-button" id="new-posts-button" type="button" hidden>Show new posts</button>
+      <div class="activity-scroll" id="activity-scroll">
+        <div class="activity-empty" id="activity-empty">
+          <div>◎</div>
+          <strong>No source posts yet</strong>
+          <span>New discoveries and /new source tweets will stay here as a persistent scrollable feed.</span>
+        </div>
+        <div class="tweet-feed" id="tweet-feed"></div>
+        <button class="load-more-button" id="load-more-button" type="button" hidden>Load older posts</button>
+        <div class="feed-end" id="feed-end" hidden>Beginning of the stored feed</div>
+      </div>
+    </aside>
+  </div>
+
+  <dialog class="account-dialog" id="account-dialog">
+    <form method="dialog" id="account-form">
+      <div class="dialog-heading">
+        <div><p class="eyebrow">SELECTED ACCOUNT</p><h2>Add account</h2></div>
+        <button class="dialog-close" value="cancel" type="submit" aria-label="Close">×</button>
+      </div>
+      <label class="dialog-field">
+        <span>X username or profile URL</span>
+        <input id="account-username" type="text" maxlength="200" placeholder="@username or https://x.com/username" autocomplete="off">
+      </label>
+      <p class="dialog-note">The account is enabled immediately. You can pause it later with the slider.</p>
+      <div class="dialog-actions">
+        <button class="secondary-button" value="cancel" type="submit">Cancel</button>
+        <button class="primary-button" id="add-account-submit" value="default" type="submit">Add account</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="draft-action-dialog" id="draft-action-dialog">
+    <form id="draft-action-form">
+      <div class="dialog-heading">
+        <div><p class="eyebrow" id="draft-action-eyebrow">DRAFT REVIEW</p><h2 id="draft-action-title">Edit draft</h2></div>
+        <button class="dialog-close" id="draft-action-close" type="button" aria-label="Close">&times;</button>
+      </div>
+      <p class="draft-action-description" id="draft-action-description"></p>
+      <label class="dialog-field" id="draft-action-text-wrap">
+        <span id="draft-action-text-label">Draft text</span>
+        <textarea id="draft-action-text" maxlength="25000" rows="8"></textarea>
+      </label>
+      <label class="draft-facts-confirm" id="draft-facts-wrap" hidden>
+        <input id="draft-facts-confirmed" type="checkbox">
+        <span>I reviewed the factual claims and confirm this version.</span>
+      </label>
+      <div class="publish-confirmation" id="draft-publish-confirmation" hidden>
+        <span>Approved version</span>
+        <p id="draft-publish-summary"></p>
+        <small>The current content and media hash will be verified again when you click Publish to X.</small>
+      </div>
+      <div class="dialog-actions">
+        <button class="secondary-button" id="draft-action-cancel" type="button">Cancel</button>
+        <button class="primary-button" id="draft-action-submit" type="submit">Save changes</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+  <script src="/assets/app.js?v=0197e" defer></script>
+</body>
+</html>

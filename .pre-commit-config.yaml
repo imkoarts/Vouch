@@ -1,0 +1,26 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: python -m ruff check --force-exclude
+        language: system
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: ruff format check
+        entry: python -m ruff format --check --force-exclude
+        language: system
+        types_or: [python, pyi]
+      - id: mypy
+        name: mypy
+        entry: python -m mypy app
+        language: system
+        pass_filenames: false
+        types_or: [python, pyi]
+      - id: unit-tests
+        name: pytest
+        entry: python -m pytest
+        language: system
+        pass_filenames: false
+        stages: [pre-push]
+

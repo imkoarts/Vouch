@@ -1,0 +1,178 @@
+[
+  {
+    "id": "long_01_repeated_paragraph_arc",
+    "mode": "LONG_FORM",
+    "draft": "The interesting part is that the provider stores the traces. The real issue is not storage itself, but who controls the resulting knowledge.\n\nThe deeper question is that the provider also scores the evals. What matters is not the score, but the judgment behind it.\n\nThe overlooked risk is that the provider controls export. The real problem is not access, but dependence.",
+    "expected_issues": [
+      "REPEATED_PARAGRAPH_ARC",
+      "PARAGRAPH_THESIS_LOOP",
+      "ANNOUNCEMENT_BEFORE_CONTENT",
+      "NOT_ONLY_BUT_REVEAL",
+      "FORMULAIC_PARAGRAPH_ENDING",
+      "QUOTE_CARD_SENTENCE_CLUSTER"
+    ]
+  },
+  {
+    "id": "long_02_recap_transition",
+    "mode": "LONG_FORM",
+    "draft": "The export omits the test cases.\n\nBecause the test cases are omitted, the customer cannot reproduce the evaluation. This brings us to portability.",
+    "expected_issues": [
+      "RECAP_TRANSITION",
+      "TRANSITION_SCAFFOLDING",
+      "PARAGRAPH_RESTATEMENT"
+    ]
+  },
+  {
+    "id": "long_03_empty_bridge",
+    "mode": "LONG_FORM",
+    "draft": "This raises another important question.\n\nWho can reuse the correction history?",
+    "expected_issues": [
+      "TRANSITION_SCAFFOLDING",
+      "IMPORTANCE_ANNOUNCEMENT",
+      "PARAGRAPH_WITHOUT_JOB"
+    ]
+  },
+  {
+    "id": "long_04_paragraph_without_job",
+    "mode": "LONG_FORM",
+    "draft": "The report lists three export failures.\n\nThis is an important distinction that deserves attention.\n\nTwo failures involved missing test cases.",
+    "expected_issues": [
+      "PARAGRAPH_WITHOUT_JOB",
+      "IMPORTANCE_ANNOUNCEMENT",
+      "CUTTABILITY_FAILURE"
+    ]
+  },
+  {
+    "id": "long_05_conclusion_restatement",
+    "mode": "LONG_FORM",
+    "draft": "The contract covers storage, training, and export.\n\nIn conclusion, companies need contracts that cover storage, training, and export.",
+    "expected_issues": [
+      "CONCLUSION_RESTATEMENT",
+      "PARAGRAPH_RESTATEMENT"
+    ]
+  },
+  {
+    "id": "long_06_forced_synthesis",
+    "mode": "LONG_FORM",
+    "draft": "The product raised fees. The export also changed format.\n\nTogether, these developments reveal a new operating model for digital ownership.",
+    "expected_issues": [
+      "FORCED_SYNTHESIS",
+      "ABSTRACTION_CREEP",
+      "ANALYTICAL_PACKAGING"
+    ]
+  },
+  {
+    "id": "long_07_abstraction_creep",
+    "mode": "LONG_FORM",
+    "draft": "The migration dropped several traces. Those traces represent institutional memory. Institutional memory becomes organizational intelligence. Organizational intelligence is the foundation of the new operating model.",
+    "expected_issues": [
+      "ABSTRACTION_CREEP",
+      "ABSTRACT_NOUN_DENSITY",
+      "QUOTE_CARD_SENTENCE_CLUSTER"
+    ]
+  },
+  {
+    "id": "long_08_example_to_lesson",
+    "mode": "LONG_FORM",
+    "draft": "One team lost its eval history because the export omitted test cases.\n\nThis proves that every company must own the entire learning stack.",
+    "expected_issues": [
+      "EXAMPLE_TO_UNIVERSAL_LESSON",
+      "ARMCHAIR_GENERALIZATION"
+    ]
+  },
+  {
+    "id": "long_09_question_chain",
+    "mode": "LONG_FORM",
+    "draft": "Who owns the traces? Who can export them? Who can reuse them? And what happens when the provider changes?",
+    "expected_issues": [
+      "RHETORICAL_QUESTION_CHAIN"
+    ]
+  },
+  {
+    "id": "long_10_uniform_cadence",
+    "mode": "LONG_FORM",
+    "draft": "The provider stores the traces.\n\nThe provider scores the evals.\n\nThe provider controls the export.\n\nThe provider defines the format.",
+    "expected_issues": [
+      "UNIFORM_PARAGRAPH_CADENCE",
+      "METRONOMIC_RHYTHM"
+    ]
+  },
+  {
+    "id": "long_11_valid_multi_paragraph_control",
+    "mode": "LONG_FORM",
+    "draft": "The tournament runs for two weeks and waives combo fees during the event. That should produce more activity than the product sees under normal conditions.\n\nPolymarket can compare how often traders open a market, inspect the legs, and leave without placing a trade.\n\nIf abandonment rises as combinations get longer, the interface may need to show the contribution of each leg more clearly.",
+    "expected_issues": []
+  },
+  {
+    "id": "long_12_valid_conclusion_action",
+    "mode": "PROFESSIONAL",
+    "draft": "The export test failed because the archive omitted the test cases.\n\nBefore renewal, procurement should require a sample export and verify that another model can run it.",
+    "expected_issues": []
+  },
+  {
+    "id": "long_13_valid_signposting",
+    "mode": "PROFESSIONAL",
+    "draft": "The analysis has three parts: data collection, attribution, and contract scope.\n\nThe first section describes how the sample was assembled.",
+    "context": "A complex report.",
+    "expected_issues": []
+  },
+  {
+    "id": "long_14_valid_legal_terminology",
+    "mode": "PROFESSIONAL",
+    "draft": "The contract defines “Customer Data” narrowly. The same definition appears in the export clause.",
+    "expected_issues": []
+  },
+  {
+    "id": "long_15_overcompressed",
+    "mode": "LONG_FORM",
+    "draft": "More legs. More confusion. Less trading.",
+    "context": "The user requested an explanatory paragraph about why combo length affects conversion.",
+    "expected_issues": [
+      "LONG_FORM_OVERCOMPRESSION",
+      "QUOTE_CARD_SENTENCE_CLUSTER"
+    ]
+  },
+  {
+    "id": "long_16_empathy_control",
+    "mode": "EMAIL_OR_DM",
+    "draft": "I’m sorry you’re dealing with this.\n\nYou do not need to answer today. Take the time you need.",
+    "context": "Message to a grieving colleague.",
+    "expected_issues": []
+  },
+  {
+    "id": "long_17_formulaic_endings",
+    "mode": "LONG_FORM",
+    "draft": "The export omitted test cases. That is the real risk.\n\nThe contract omitted reuse rights. That is the real gap.\n\nThe migration failed twice. That is the real cost.",
+    "expected_issues": [
+      "FORMULAIC_PARAGRAPH_ENDING",
+      "PARAGRAPH_THESIS_LOOP",
+      "REPEATED_PARAGRAPH_ARC"
+    ]
+  },
+  {
+    "id": "long_18_synthetic_cohesion",
+    "mode": "LONG_FORM",
+    "draft": "First, it is important to understand the export format. Moving forward, we must consider contract scope. With that in mind, the next issue is model compatibility.",
+    "expected_issues": [
+      "SYNTHETIC_COHESION",
+      "TRANSITION_SCAFFOLDING",
+      "IMPORTANCE_ANNOUNCEMENT"
+    ]
+  },
+  {
+    "id": "long_19_evidence_paragraph_control",
+    "mode": "PROFESSIONAL",
+    "draft": "The archive contained scores for all 120 eval cases but included only 38 underlying prompts. The remaining 82 cases could not be rerun.",
+    "evidence": [
+      "The counts are verified."
+    ],
+    "expected_issues": []
+  },
+  {
+    "id": "long_20_summary_requested_control",
+    "mode": "PROFESSIONAL",
+    "draft": "In summary, the audit found two missing export fields and one undocumented retention rule.",
+    "context": "The user explicitly requested an executive summary.",
+    "expected_issues": []
+  }
+]

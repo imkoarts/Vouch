@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Vouch</title>
+  <path fill="#151918" d="M9 9h18v8H17v23l15 10 15-10V23h8v21L32 59 9 44z"/>
+  <path fill="#24b8a6" d="m20 20 11 11 17-20 7 6-24 28-18-18z"/>
+</svg>

@@ -1,0 +1,40 @@
+account:
+  language: en
+  secondary_language: null
+  x_account_tier: standard
+  default_post_max_chars: 280
+  premium_long_posts_enabled: false
+  premium_long_post_max_chars: 25000
+
+brand:
+  name: ""
+  description: ""
+  target_audience: ""
+  expertise: []
+  values: []
+  prohibited_topics: []
+  preferred_topics: []
+  preferred_tone:
+    - direct
+    - specific
+    - conversational
+  avoid:
+    - generic_ai_phrases
+    - fake_quotes
+    - clickbait_without_value
+    - excessive_hashtags
+    - copied_hooks
+    - vague_hype
+    - press_release_language
+
+generation:
+  formats:
+    - short_post
+    - long_post
+    - thread
+    - reply
+    - quote_commentary
+    - video_post
+  variants_per_idea: 3
+  hashtags_max: 1
+  emoji_max: 1

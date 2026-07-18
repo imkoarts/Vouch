@@ -1,0 +1,147 @@
+[
+  {
+    "id": "xpost_01_polymarket_combos_regression",
+    "mode": "X_POST",
+    "draft": "A trading tournament around Polymarket's new combos product gives the format a narrow test: how people use it when there is a reason to trade it actively. If combos extend beyond sports, the practical question is not only whether more categories can be listed. It is whether the combination remains legible enough that a trader can understand what is being priced.",
+    "expected_issues": [
+      "ANALYTICAL_PACKAGING",
+      "ABSTRACT_TEST_FRAMING",
+      "VAGUE_USER_PROXY",
+      "STAGED_THESIS",
+      "MANUFACTURED_QUESTION",
+      "NOT_ONLY_BUT_REVEAL",
+      "ABSTRACT_NOUN_DENSITY",
+      "ABSTRACT_PREDICATE",
+      "PRODUCT_MEMO_VOICE",
+      "MINI_ESSAY_ARC"
+    ],
+    "acceptable_revision": "The tournament should show whether traders can quickly understand combo markets once volume picks up. If Polymarket expands them beyond sports, each market still needs to make clear what the price includes."
+  },
+  {
+    "id": "xpost_02_abstract_test",
+    "mode": "X_POST",
+    "draft": "The launch gives the product a real-world test of user demand.",
+    "expected_issues": [
+      "ABSTRACT_TEST_FRAMING",
+      "ANALYTICAL_PACKAGING",
+      "VAGUE_USER_PROXY"
+    ]
+  },
+  {
+    "id": "xpost_03_real_test_control",
+    "mode": "X_POST",
+    "draft": "The beta tests whether checkout works under 10,000 concurrent sessions.",
+    "evidence": [
+      "The beta has a defined load-test criterion."
+    ],
+    "expected_issues": []
+  },
+  {
+    "id": "xpost_04_practical_question",
+    "mode": "X_POST",
+    "draft": "The practical question is whether the format remains legible.",
+    "expected_issues": [
+      "MANUFACTURED_QUESTION",
+      "ANALYTICAL_PACKAGING",
+      "PRODUCT_MEMO_VOICE",
+      "ABSTRACT_NOUN_DENSITY"
+    ]
+  },
+  {
+    "id": "xpost_05_not_only_reveal",
+    "mode": "X_POST",
+    "draft": "The question is not only whether more markets can be listed. It is whether traders can understand them.",
+    "expected_issues": [
+      "STAGED_THESIS",
+      "MANUFACTURED_QUESTION",
+      "NOT_ONLY_BUT_REVEAL"
+    ]
+  },
+  {
+    "id": "xpost_06_direct_control",
+    "mode": "X_POST",
+    "draft": "Adding markets will not help if traders cannot tell what each contract includes.",
+    "expected_issues": []
+  },
+  {
+    "id": "xpost_07_abstract_nouns",
+    "mode": "X_POST",
+    "draft": "Expansion increases the importance of combination legibility.",
+    "expected_issues": [
+      "ABSTRACT_NOUN_DENSITY",
+      "ABSTRACT_PREDICATE",
+      "PRODUCT_MEMO_VOICE"
+    ]
+  },
+  {
+    "id": "xpost_08_concrete_actor_control",
+    "mode": "X_POST",
+    "draft": "As Polymarket adds categories, traders still need to see what each combo includes.",
+    "expected_issues": []
+  },
+  {
+    "id": "xpost_09_product_memo",
+    "mode": "X_POST",
+    "draft": "The format creates an opportunity to test category expansion under active trading conditions.",
+    "expected_issues": [
+      "PRODUCT_MEMO_VOICE",
+      "ANALYTICAL_PACKAGING",
+      "ABSTRACT_TEST_FRAMING",
+      "ABSTRACT_NOUN_DENSITY"
+    ]
+  },
+  {
+    "id": "xpost_10_mini_essay",
+    "mode": "X_POST",
+    "draft": "The tournament creates activity. That activity provides a useful test. The real question is whether the format remains readable.",
+    "expected_issues": [
+      "MINI_ESSAY_ARC",
+      "ABSTRACT_TEST_FRAMING",
+      "MANUFACTURED_QUESTION",
+      "STAGED_THESIS",
+      "PRODUCT_MEMO_VOICE"
+    ]
+  },
+  {
+    "id": "xpost_11_one_sentence_control",
+    "mode": "X_POST",
+    "draft": "The tournament should show whether traders can read combo markets quickly once volume picks up.",
+    "expected_issues": []
+  },
+  {
+    "id": "xpost_12_technical_control",
+    "mode": "X_POST",
+    "draft": "Liquidity fragmentation raises slippage across smaller markets.",
+    "evidence": [
+      "The analysis measures higher slippage after liquidity splits."
+    ],
+    "expected_issues": []
+  },
+  {
+    "id": "xpost_13_question_control",
+    "mode": "X_POST",
+    "draft": "Does Polymarket show the implied probability for each leg before a combo is placed?",
+    "context": "The product description does not answer this.",
+    "expected_issues": []
+  },
+  {
+    "id": "xpost_14_vague_people",
+    "mode": "X_POST",
+    "draft": "The tournament will show how people use combos.",
+    "evidence": [
+      "The participants are traders."
+    ],
+    "expected_issues": [
+      "VAGUE_USER_PROXY"
+    ]
+  },
+  {
+    "id": "xpost_15_three_sentence_control",
+    "mode": "X_POST",
+    "draft": "The tournament starts Friday. Combo fees are waived during the event. Polymarket will publish the winning strategies afterward.",
+    "evidence": [
+      "All three facts are confirmed."
+    ],
+    "expected_issues": []
+  }
+]

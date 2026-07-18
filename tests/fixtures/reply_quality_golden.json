@@ -1,0 +1,566 @@
+[
+  {
+    "id": "reply-ai-lock-in-correction-history",
+    "mode": "reply",
+    "source": "Model requests can include corrections and evals used to shape expected behavior.",
+    "evidence": "The selected angle concerns portability of corrections and evals.",
+    "known_bad_output": "companies spent years locking down their data and are now casually exporting the part that matters most: how their people correct, judge and improve the model.\n\nthat correction history is basically the company learning out loud. letting it leave the building feels a lot riskier than most teams realize.",
+    "expected_issue_codes": [
+      "HISTORICAL_CONTRAST_FRAME",
+      "UNSUPPORTED_SUPERLATIVE",
+      "MECHANICAL_TRICOLON",
+      "INSIGHT_PACKAGING",
+      "METAPHOR_STACKING",
+      "IMAGINARY_AWARENESS_GAP",
+      "UNSUPPORTED_STAKES",
+      "REPLY_OVERPRODUCTION",
+      "REDUNDANT_PARAGRAPH",
+      "FALSE_CASUALNESS",
+      "CONCRETE_TO_ABSTRACT_DRIFT"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it contain one contribution?",
+      "Does it use more rhetoric than the idea needs?",
+      "Does it invent what other people understand?",
+      "Does it turn a concrete point into a metaphor?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version with the same meaning?"
+    ]
+  },
+  {
+    "id": "reply-agreement-1",
+    "mode": "reply",
+    "source": "The source says the API integration is easy to replace.",
+    "evidence": "The evals can still be the harder part to move.",
+    "known_bad_output": "The real moat is the learning loop most teams ignore.",
+    "expected_issue_codes": [
+      "INSIGHT_PACKAGING",
+      "IMAGINARY_AWARENESS_GAP"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-disagreement-1",
+    "mode": "reply",
+    "source": "The source calls lower fees an adoption breakthrough.",
+    "evidence": "The fee cut applies only to limit orders, so the effect is narrower.",
+    "known_bad_output": "This changes everything for adoption.",
+    "expected_issue_codes": [
+      "ARTIFICIAL_STAKES"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-caveat-1",
+    "mode": "reply",
+    "source": "A product says it supports exports.",
+    "evidence": "The export covers prompts but not stored eval results.",
+    "known_bad_output": "The details will matter more than the hype.",
+    "expected_issue_codes": [
+      "PLACEHOLDER_COMMENTARY"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-dry-1",
+    "mode": "reply",
+    "source": "A tool renamed the same feature for the third time.",
+    "evidence": "Same feature, new label.",
+    "known_bad_output": "The future is already here.",
+    "expected_issue_codes": [
+      "FAKE_DEPTH"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-correction-1",
+    "mode": "reply",
+    "source": "A post says a filing was approved.",
+    "evidence": "The filing was submitted; the source does not show approval.",
+    "known_bad_output": "Reports suggest approval, but verification is needed.",
+    "expected_issue_codes": [
+      "VAGUE_ATTRIBUTION",
+      "GENERIC_VERIFICATION"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-news-1",
+    "mode": "reply",
+    "source": "An official says a route is open.",
+    "evidence": "The official statement is present; operator confirmation is not.",
+    "known_bad_output": "The information requires independent verification.",
+    "expected_issue_codes": [
+      "GENERIC_VERIFICATION"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-rumor-1",
+    "mode": "reply",
+    "source": "Several accounts repeat an airdrop rumor.",
+    "evidence": "None of the supplied posts links to the team.",
+    "known_bad_output": "If it happens, distribution will matter.",
+    "expected_issue_codes": [
+      "CONDITIONAL_ESCAPE",
+      "PLACEHOLDER_COMMENTARY"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-ai-product-1",
+    "mode": "reply",
+    "source": "A model release adds a larger context window.",
+    "evidence": "The release notes do not mention retrieval latency.",
+    "known_bad_output": "A pivotal release that will reshape the landscape.",
+    "expected_issue_codes": [
+      "LEXICAL_MARKER_CLUSTER",
+      "ARTIFICIAL_STAKES"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-security-1",
+    "mode": "reply",
+    "source": "A provider stores eval traces.",
+    "evidence": "The retention setting is separate from the no-training setting.",
+    "known_bad_output": "The most important risk is institutional memory leaving the building.",
+    "expected_issue_codes": [
+      "UNSUPPORTED_SUPERLATIVE",
+      "INSIGHT_PACKAGING"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-strategy-1",
+    "mode": "reply",
+    "source": "A company standardizes on one model API.",
+    "evidence": "The workflow tests are stored in the provider dashboard.",
+    "known_bad_output": "Companies will realize too late that the feedback loop is the moat.",
+    "expected_issue_codes": [
+      "IMAGINARY_AWARENESS_GAP",
+      "INSIGHT_PACKAGING"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-source-context-1",
+    "mode": "reply",
+    "source": "The source already explains the entire launch timeline.",
+    "evidence": "The reply should add only a specific caveat.",
+    "known_bad_output": "First, the launch was announced. Second, execution matters.",
+    "expected_issue_codes": [
+      "SOURCE_SUMMARY_ONLY",
+      "PLACEHOLDER_COMMENTARY"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-superlative-1",
+    "mode": "reply",
+    "source": "A post discusses correction logs.",
+    "evidence": "The logs record expected output changes.",
+    "known_bad_output": "The correction log is the part that matters most.",
+    "expected_issue_codes": [
+      "UNSUPPORTED_SUPERLATIVE"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-awareness-1",
+    "mode": "reply",
+    "source": "A post discusses model portability.",
+    "evidence": "It mentions export formats.",
+    "known_bad_output": "Most teams do not understand the real portability risk.",
+    "expected_issue_codes": [
+      "IMAGINARY_AWARENESS_GAP"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-metaphor-1",
+    "mode": "reply",
+    "source": "A post discusses eval storage.",
+    "evidence": "The evals are stored in a provider-specific dashboard.",
+    "known_bad_output": "The feedback loop is memory, and the dashboard holds the keys to company intelligence.",
+    "expected_issue_codes": [
+      "METAPHOR_STACKING"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-insight-1",
+    "mode": "reply",
+    "source": "A post discusses corrections.",
+    "evidence": "Corrections are stored with each test.",
+    "known_bad_output": "Corrections are the operating system of organizational judgment.",
+    "expected_issue_codes": [
+      "INSIGHT_PACKAGING"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-history-1",
+    "mode": "reply",
+    "source": "A post discusses data controls.",
+    "evidence": "It does not contain historical claims.",
+    "known_bad_output": "Companies spent a decade securing data only to give away intelligence in prompts.",
+    "expected_issue_codes": [
+      "HISTORICAL_CONTRAST_FRAME"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-stakes-1",
+    "mode": "reply",
+    "source": "A post discusses export limits.",
+    "evidence": "The source names no concrete loss.",
+    "known_bad_output": "This is far more dangerous than teams think.",
+    "expected_issue_codes": [
+      "UNSUPPORTED_STAKES",
+      "IMAGINARY_AWARENESS_GAP"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-overproduction-1",
+    "mode": "reply",
+    "source": "A source has one technical claim.",
+    "evidence": "One literal sentence is enough.",
+    "known_bad_output": "Setup paragraph.\n\nMetaphor paragraph.\n\nWarning paragraph.\n\nLesson paragraph.",
+    "expected_issue_codes": [
+      "REPLY_OVERPRODUCTION"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-redundant-1",
+    "mode": "reply",
+    "source": "A source discusses eval history.",
+    "evidence": "The reply has one contribution.",
+    "known_bad_output": "The correction history is stored by the provider.\n\nThat correction history is company learning.",
+    "expected_issue_codes": [
+      "REDUNDANT_PARAGRAPH",
+      "INSIGHT_PACKAGING"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-false-casual-1",
+    "mode": "reply",
+    "source": "A post discusses feedback data.",
+    "evidence": "Literal wording is available.",
+    "known_bad_output": "basically, the feedback loop is the real moat.",
+    "expected_issue_codes": [
+      "FALSE_CASUALNESS",
+      "INSIGHT_PACKAGING"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-abstraction-1",
+    "mode": "reply",
+    "source": "A post lists evals and corrections.",
+    "evidence": "The artifacts are concrete.",
+    "known_bad_output": "Evals become correction history, company learning, judgment, intelligence, and a moat.",
+    "expected_issue_codes": [
+      "ABSTRACTION_LADDER",
+      "CONCRETE_TO_ABSTRACT_DRIFT"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-causal-1",
+    "mode": "reply",
+    "source": "A source establishes one relation.",
+    "evidence": "Other causal steps are unknown.",
+    "known_bad_output": "Corrections create knowledge. That knowledge creates dependence. Therefore the company loses control.",
+    "expected_issue_codes": [
+      "POLISHED_CAUSAL_ARC"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-authority-1",
+    "mode": "reply",
+    "source": "A clause omits export behavior.",
+    "evidence": "The observation is local to this clause.",
+    "known_bad_output": "Every serious AI contract should make portability the baseline.",
+    "expected_issue_codes": [
+      "UNSUPPORTED_INFERENCE"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-question-bait-1",
+    "mode": "reply",
+    "source": "A source explains the export format.",
+    "evidence": "No unresolved question is needed.",
+    "known_bad_output": "The real question? Who owns the future?",
+    "expected_issue_codes": [
+      "RHETORICAL_QUESTION_BAIT",
+      "FAKE_DEPTH"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-corporate-1",
+    "mode": "reply",
+    "source": "A product adds an export endpoint.",
+    "evidence": "The endpoint returns JSON.",
+    "known_bad_output": "This empowers users and unlocks value across the ecosystem.",
+    "expected_issue_codes": [
+      "CORPORATE_VOICE"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-media-1",
+    "mode": "reply",
+    "source": "An official publishes a statement.",
+    "evidence": "The statement is the direct source.",
+    "known_bad_output": "In a major development, the move signals a new era.",
+    "expected_issue_codes": [
+      "MEDIA_BRAND_VOICE",
+      "ARTIFICIAL_STAKES"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-control-1",
+    "mode": "reply",
+    "source": "A source says evals are hard to export.",
+    "evidence": "The reply may state that directly.",
+    "known_bad_output": "The evals are probably harder to move than the API integration.",
+    "expected_issue_codes": [],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-control-2",
+    "mode": "reply",
+    "source": "A source says only prompts can be exported.",
+    "evidence": "The reply may identify the missing artifact.",
+    "known_bad_output": "The export covers prompts, not the stored eval results.",
+    "expected_issue_codes": [],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-source-review-leakage",
+    "mode": "reply",
+    "source": "An official makes a claim without operator confirmation.",
+    "evidence": "Attribution is necessary.",
+    "known_bad_output": "The agency says the route is open. The supplied sources do not include operator confirmation.",
+    "expected_issue_codes": [
+      "EXPLANATION_LEAKAGE",
+      "MEDIA_BRAND_VOICE",
+      "SOURCE_SUMMARY_ONLY"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a source-review note?",
+      "Is source handling leaking into publishable copy?",
+      "Could the actual claimant be named without discussing supplied sources?"
+    ]
+  },
+  {
+    "id": "reply-control-4",
+    "mode": "reply",
+    "source": "A fee change applies to one order type.",
+    "evidence": "A scoped caveat is useful.",
+    "known_bad_output": "The lower fee applies to limit orders, not every trade.",
+    "expected_issue_codes": [],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it add one contribution?",
+      "Would deleting the final sentence improve it?",
+      "Is there a shorter literal version?"
+    ]
+  },
+  {
+    "id": "reply-overcompressed-theory-1",
+    "mode": "reply",
+    "source": "A post discusses API migration artifacts.",
+    "evidence": "The source separately names evals, corrections, traces, and workflow context.",
+    "known_bad_output": "The API stores evals, corrections, traces, and workflow context as organizational intelligence.",
+    "expected_issue_codes": [
+      "OVERCOMPRESSED_THEORY"
+    ],
+    "questions": [
+      "Does this sound like a reply rather than a standalone essay?",
+      "Does it contain one contribution?",
+      "Does it use more rhetoric than the idea needs?",
+      "Is there a shorter literal version with the same meaning?"
+    ]
+  },
+  {
+    "id": "reply-unnecessary-metaphor-1",
+    "mode": "reply",
+    "source": "A post discusses eval history.",
+    "evidence": "The eval history records expected outputs from prior tests.",
+    "known_bad_output": "The eval history is institutional memory.",
+    "expected_issue_codes": [
+      "UNNECESSARY_METAPHOR",
+      "INSIGHT_PACKAGING"
+    ],
+    "questions": [
+      "Does the metaphor make the mechanism clearer?",
+      "Could the object be named literally?",
+      "Does this contain one contribution?"
+    ]
+  },
+  {
+    "id": "reply-unsupported-group-1",
+    "mode": "reply",
+    "source": "One company described a provider migration.",
+    "evidence": "The source only describes that company.",
+    "known_bad_output": "Companies should keep every eval outside the provider.",
+    "expected_issue_codes": [
+      "UNSUPPORTED_GROUP_GENERALIZATION"
+    ],
+    "questions": [
+      "Does the evidence support a claim about companies generally?",
+      "Can the scope be narrowed to the source?",
+      "Is there a shorter literal version?"
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analyze Personal Voice"
+  short_description: "Extract safe reusable writing-style traits"
+  default_prompt: "Use $analyze-personal-voice to build an evidence-based voice profile from these writing samples."

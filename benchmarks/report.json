@@ -1,0 +1,26 @@
+{
+  "suite_version": "1.0",
+  "scenario_count": 60,
+  "unique_prompt_count": 6,
+  "unique_expected_outcome_count": 6,
+  "independent_manual_validation": false,
+  "evaluation_status": "live_comparative_evaluation_pending",
+  "primary_metric": "share_of_manually_approved_drafts_without_unsupported_claims",
+  "categories": {
+    "unsupported_claim": 10,
+    "attribution_integrity": 10,
+    "inappropriate_humor": 10,
+    "missing_caveat": 10,
+    "false_rejection": 10,
+    "approval_integrity": 10
+  },
+  "direct_gpt_5_6": {
+    "status": "not_measured",
+    "reason": "Live paid evaluation requires an explicit operator run and budget approval."
+  },
+  "vouch_pipeline": {
+    "status": "not_measured",
+    "reason": "Live paid evaluation requires an explicit operator run and budget approval."
+  },
+  "engagement_is_primary_metric": false
+}

@@ -1,0 +1,139 @@
+providers:
+  openai:
+    enabled: true
+    model: gpt-5.6-terra
+    timeout_seconds: 120
+    image_model: gpt-image-2
+  xai:
+    enabled: true
+    model: grok-4.5
+    timeout_seconds: 360
+    base_url: https://api.x.ai/v1
+  heygen:
+    enabled: false
+    model: heygen-v2
+    mode: api
+
+generation:
+  provider: openai
+  post_length_mode: short
+  input_classification_enabled: true
+  angle_selection_enabled: true
+  evidence:
+    max_items: 12
+    prefer_primary_sources: true
+    deduplicate: true
+  variants:
+    count: 3
+    require_distinct_angles: true
+  signal_selection:
+    enabled: true
+    max_candidate_attempts: 5
+    automatic_multi_source_synthesis_enabled: false
+  quality:
+    enabled: true
+    # Keep validation local by default. Enabling this asks the selected LLM to re-classify
+    # source/contribution/final-draft semantics and can add several paid requests per draft.
+    remote_semantic_validation_enabled: false
+    max_draft_attempts: 2
+    max_humanizer_revisions: 1
+    reject_insufficient_context: true
+    minimum_specificity_score: 0.70
+    minimum_evidence_score: 0.90
+    minimum_naturalness_score: 0.70
+    maximum_recent_similarity: 0.88
+    recent_corpus_limit: 12
+    topic_substitution_check: true
+    final_sentence_deletion_check: true
+  voice_profile:
+    account: null
+    language: en
+    tone: [plain, specific, observant, low_key]
+    defaults:
+      hashtags: false
+      emojis: false
+      max_emojis: 1
+      lowercase_allowed: true
+      slang_allowed: false
+      forced_slang: false
+      forced_hot_take: false
+      forced_contrarianism: false
+    short_post:
+      preferred_sentences_min: 1
+      preferred_sentences_max: 3
+      preferred_characters_min: 60
+      preferred_characters_max: 260
+    banned_tendencies:
+      - corporate_voice
+      - creator_coach_voice
+      - generic_motivation
+      - fake_depth
+      - polished_slogan_ending
+      - vague_brand_praise
+      - thought_leader_voice
+      - media_brand_voice
+      - insight_packaging
+      - metaphor_stacking
+      - awareness_gap_claims
+  style_examples:
+    enabled: true
+    max_approved_examples: 3
+    max_rejected_examples: 2
+  humanizer_enabled: true
+  humanizer_mode: compact_conditional
+  humanizer_skill_path: null
+  humanizer_include_references: true
+  editorial_quality_retry_count: 1
+  notify_telegram: true
+
+request_pacing:
+  x_request_delay_seconds: 2.0
+  x_temporary_error_max_retries: 2
+  x_temporary_error_initial_backoff_seconds: 2.0
+  x_temporary_error_max_backoff_seconds: 10.0
+  llm_pre_request_delay_seconds: 3.0
+  llm_minimum_interval_seconds: 30.0
+  llm_rate_limit_max_retries: 2
+  llm_rate_limit_initial_backoff_seconds: 5.0
+  llm_rate_limit_max_backoff_seconds: 30.0
+  insufficient_quota_cooldown_minutes: 60
+  llm_structured_output_max_retries: 0
+  llm_structured_output_retry_delay_seconds: 2.0
+
+images:
+  enabled: false
+  provider: openai
+  size: 1536x1024
+  quality: medium
+  output_format: png
+
+telegram:
+  enabled: false
+  autostart: false
+  operator_user_id: null
+  allowed_user_ids: []
+  review_chat_id: null
+  notify_on_new_draft: true
+  long_poll_timeout_seconds: 30
+  request_timeout_seconds: 45
+  drop_pending_updates_on_start: false
+
+x_activity:
+  enabled: false
+  autostart: false
+  notify_telegram: true
+  backfill_minutes: 0
+  reconnect_initial_seconds: 2
+  reconnect_max_seconds: 60
+  subscriptions:
+    - event_type: post.mention.create
+      user_id: self
+      tag: vouch-own-mentions
+      ingest_as_idea: true
+      generate_reply_draft: false
+      notify_telegram: true
+
+publication:
+  manual_x_publish_enabled: false
+  enterprise_quote_posts_enabled: false
+  automatic_x_publish_enabled: false

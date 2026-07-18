@@ -1,0 +1,32 @@
+version: 1
+modes:
+  report_event:
+    approved:
+      - source: "Alice signed the bill on Tuesday."
+        output: "Alice signed the bill on Tuesday."
+        reason: "A literal event rewrite is valid when the intent is reporting."
+  comment_on_source:
+    approved:
+      - source: "The export includes scores but excludes test cases."
+        additional_evidence: "The target model requires the test cases to rerun the evaluation."
+        output: "The scores can be exported, but the evaluation cannot be rerun without the test cases."
+        reason: "The additional evidence supports a distinct relation."
+    no_post:
+      - source: "The source already states the fact, mechanism, consequence, and interpretation."
+        reason_code: "SOURCE_ALREADY_COVERS_AVAILABLE_POINT"
+    rejected:
+      - source: "BREAKING: Hungary’s parliament votes to remove President Tamás Sulyok, in the latest move to dismantle Viktor Orbán’s remaining influence."
+        output: "Hungary’s parliament voting to remove President Tamás Sulyok makes the change concrete: a named officeholder is being removed, rather than Viktor Orbán’s influence being discussed in the abstract. The presidency is now part of the political shift itself. That is a more tangible development than a general argument about influence."
+        issues: [ANALYTICAL_PARAPHRASE_LOOP, ABSTRACT_RESTATEMENT, INVENTED_COMPARISON_TARGET, DEPERSONALIZING_RENAME, LEXICAL_NOVELTY_ONLY]
+      - source: "The company cut the fee from 2% to 1%."
+        output: "The fee reduction turns pricing into part of the product shift itself. That is a more tangible development than a general discussion about affordability."
+        issues: [ABSTRACT_RESTATEMENT, INVENTED_COMPARISON_TARGET, ANALYTICAL_PARAPHRASE_LOOP]
+  reply_reaction:
+    approved:
+      - source: "A product shipped a button nobody asked for."
+        output: "finally, a button with no known constituency"
+        reason: "A short source-specific joke can be the contribution."
+  long_form_analysis:
+    guidance:
+      - "Every paragraph must add a fact, mechanism, caveat, decision, action, or genuine synthesis."
+      - "Delete conclusions that only restate earlier paragraphs."

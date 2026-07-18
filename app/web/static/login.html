@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>Sign in — Vouch</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/auth.css?v=0197b">
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="atmosphere-orbit atmosphere-orbit-a"></div>
+    <div class="atmosphere-orbit atmosphere-orbit-b"></div>
+    <div class="atmosphere-grain"></div>
+  </div>
+
+  <main class="auth-stage">
+    <section class="login-card" id="login-view" aria-labelledby="login-title">
+      <div class="login-visual">
+        <a class="auth-brand" href="/" aria-label="Vouch home">
+          <img src="/assets/vouch-mark.svg" alt="">
+          <span>Vouch</span>
+        </a>
+        <div class="visual-copy">
+          <p class="eyebrow">YOUR EDITORIAL MEMORY</p>
+          <h2>Your sources. Your voice. Your final word.</h2>
+          <p>Sources, drafts, and voice preferences stay attached to one private account.</p>
+        </div>
+        <div class="visual-signal" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+
+      <div class="login-form-panel">
+        <div class="sunset-haze" aria-hidden="true"></div>
+        <div class="login-form-wrap">
+          <header class="auth-heading">
+            <p class="eyebrow">PRIVATE WORKSPACE</p>
+            <h1 id="login-title">Welcome to Vouch</h1>
+            <p id="login-subtitle">Sign in with a one-time code sent to your email.</p>
+          </header>
+
+          <form id="email-form" novalidate>
+            <label class="auth-input-shell">
+              <span><small>Email</small><input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required></span>
+              <button class="gradient-action" type="submit" aria-label="Send sign-in code"><i></i><b>→</b></button>
+            </label>
+          </form>
+
+          <form id="code-form" hidden novalidate>
+            <button class="text-back" id="back-to-email" type="button">← Change email</button>
+            <label class="code-label" for="auth-code">One-time code</label>
+            <input class="code-input" id="auth-code" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="000000" required>
+            <button class="primary-auth-button" type="submit"><span>Verify and continue</span><b>→</b></button>
+          </form>
+
+          <p class="auth-state" id="auth-state" role="status" aria-live="polite"></p>
+          <footer class="auth-footnote">No password. Codes expire after 10 minutes.</footer>
+        </div>
+      </div>
+    </section>
+
+    <section class="onboarding-shell" id="onboarding-view" hidden aria-labelledby="question-title">
+      <aside class="onboarding-context">
+        <a class="auth-brand" href="/" aria-label="Vouch home"><img src="/assets/vouch-mark.svg" alt=""><span>Vouch</span></a>
+        <div class="context-copy">
+          <p class="eyebrow">VOICE PROFILE</p>
+          <h1>Let’s understand how you communicate</h1>
+          <p>Your answers become practical guidance for every draft—not a generic tone label.</p>
+        </div>
+        <div class="progress-cluster">
+          <span id="progress-label">Question 1 of 10</span>
+          <div class="progress-track"><i id="progress-fill"></i></div>
+        </div>
+        <p class="privacy-note"><span aria-hidden="true">◇</span>Your answers stay with this account and are used only to personalize drafts.</p>
+      </aside>
+
+      <section class="question-panel">
+        <div id="question-view">
+          <div class="question-meta"><span id="question-number">01 / 10</span><span id="selection-count"></span></div>
+          <h2 id="question-title"></h2>
+          <p class="question-support" id="question-support"></p>
+          <div class="answer-grid" id="answer-grid"></div>
+          <label class="other-answer" id="other-answer" hidden>
+            <span>Your answer</span>
+            <textarea id="other-text" rows="3" maxlength="240" placeholder="Tell us what sounds natural to you…"></textarea>
+          </label>
+          <p class="onboarding-error" id="onboarding-error" role="alert"></p>
+        </div>
+        <div class="success-view" id="success-view" hidden>
+          <div class="success-ring">✓</div>
+          <p class="eyebrow">PROFILE SAVED</p>
+          <h2>Your voice profile is ready</h2>
+          <p>Vouch will use these choices to shape reasoning, rhythm, humor, and feedback.</p>
+        </div>
+        <nav class="question-navigation" id="question-navigation">
+          <button class="onboarding-back" id="question-back" type="button">← Back</button>
+          <button class="gradient-next" id="question-next" type="button" disabled><i></i><span>Next</span><b>→</b></button>
+        </nav>
+      </section>
+    </section>
+  </main>
+  <script src="/assets/auth.js?v=0197b" defer></script>
+</body>
+</html>

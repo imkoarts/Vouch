@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {"id":"irony_blackout_rating","kind":"sarcasm","source":"The blackout caused four patient deaths.","reply":"top marks to the blackout"},
+    {"id":"irony_collision_praise","kind":"sarcasm","source":"Two passengers died in the collision.","reply":"brilliant performance by the collision"},
+    {"id":"irony_incident_reward","kind":"sarcasm","source":"The incident left a worker in a coma.","reply":"the incident earned a trophy"},
+    {"id":"literal_recovery_praise","kind":"literal_praise","source":"The grid safely recovered and service was restored.","reply":"superb work from the recovery team"},
+    {"id":"harm_lost_lives","kind":"human_harm","source":"Four residents lost their lives in the flood.","reply":""},
+    {"id":"harm_fighting_life","kind":"human_harm","source":"The passenger is fighting for her life.","reply":""},
+    {"id":"harm_unconscious_critical","kind":"human_harm","source":"The worker was left unconscious and in critical condition.","reply":""},
+    {"id":"nonhuman_deployment","kind":"nonhuman","source":"The deployment died after the rollback.","reply":""},
+    {"id":"nonhuman_ordinance","kind":"nonhuman","source":"The ordinance died in committee.","reply":""},
+    {"id":"nonhuman_index","kind":"nonhuman","source":"The index was killed by rate fears.","reply":""},
+    {"id":"mixed_cluster","kind":"mixed","source":"The database died. Three nurses died during the outage.","reply":""},
+    {"id":"shell_lipstick","kind":"shell","source":"","reply":"onboarding is paperwork with lipstick"},
+    {"id":"shell_costume","kind":"shell","source":"","reply":"onboarding is paperwork in a costume"},
+    {"id":"shell_makeover","kind":"shell","source":"","reply":"onboarding is paperwork with a makeover"},
+    {"id":"shell_surprise_reveal","kind":"shell","source":"","reply":"surprise: onboarding was paperwork all along"},
+    {"id":"control_event_proximity","kind":"no_harm","source":"Three patients watched the fire drill.","reply":""},
+    {"id":"control_capitalized_product","kind":"not_person","source":"ATLAS died after deployment.","reply":""},
+    {"id":"control_literal_definition","kind":"no_shell","source":"","reply":"a checksum is a value used to detect data errors"},
+    {"id":"control_formula","kind":"no_shell","source":"","reply":"velocity equals distance divided by time"},
+    {"id":"control_quote","kind":"no_shell","source":"","reply":"the memo quotes \"onboarding is paperwork\""}
+  ]
+}

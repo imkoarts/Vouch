@@ -1,0 +1,987 @@
+{
+  "$defs": {
+    "EvaluationRelation": {
+      "additionalProperties": false,
+      "description": "Typed evaluative relation extracted from final reply text.",
+      "properties": {
+        "confidence": {
+          "default": "low",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "evaluation_type": {
+          "default": "unknown",
+          "enum": [
+            "praise",
+            "admiration",
+            "rating",
+            "reward",
+            "celebration",
+            "success_attribution",
+            "blame",
+            "criticism",
+            "dismissal",
+            "other",
+            "unknown"
+          ],
+          "title": "Evaluation Type",
+          "type": "string"
+        },
+        "evidence_spans": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Spans",
+          "type": "array"
+        },
+        "literal_reading_plausible": {
+          "default": false,
+          "title": "Literal Reading Plausible",
+          "type": "boolean"
+        },
+        "polarity": {
+          "default": "unknown",
+          "enum": [
+            "positive",
+            "negative",
+            "neutral",
+            "unknown"
+          ],
+          "title": "Polarity",
+          "type": "string"
+        },
+        "relation_subtype": {
+          "default": "none",
+          "enum": [
+            "praise",
+            "celebration",
+            "rating",
+            "reward",
+            "admiration",
+            "success_attribution",
+            "positive_timing",
+            "beneficiary",
+            "none",
+            "uncertain"
+          ],
+          "title": "Relation Subtype",
+          "type": "string"
+        },
+        "target_entity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SemanticEntity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "target_event_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Event Id"
+        }
+      },
+      "title": "EvaluationRelation",
+      "type": "object"
+    },
+    "HoldoutCase": {
+      "additionalProperties": false,
+      "description": "One independent hybrid-semantic holdout case.",
+      "properties": {
+        "expect": {
+          "$ref": "#/$defs/HoldoutExpectation"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "metadata_says_humor": {
+          "default": false,
+          "title": "Metadata Says Humor",
+          "type": "boolean"
+        },
+        "mode": {
+          "default": "deterministic_only",
+          "enum": [
+            "deterministic_only",
+            "offline_unresolved",
+            "provider_assisted"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "provider_proposal": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SemanticProviderProposal"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "reaction_type": {
+          "default": "none",
+          "enum": [
+            "literalization",
+            "incongruity",
+            "callback",
+            "wordplay",
+            "dry_reframe",
+            "none",
+            "uncertain"
+          ],
+          "title": "Reaction Type",
+          "type": "string"
+        },
+        "reply": {
+          "default": "",
+          "title": "Reply",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "template_humor": {
+          "default": false,
+          "title": "Template Humor",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "expect"
+      ],
+      "title": "HoldoutCase",
+      "type": "object"
+    },
+    "HoldoutExpectation": {
+      "additionalProperties": false,
+      "description": "Optional expectations; omitted fields are intentionally not asserted.",
+      "properties": {
+        "escalation_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Escalation Required"
+        },
+        "forbidden_canonical_candidate_issue_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Forbidden Canonical Candidate Issue Codes",
+          "type": "array"
+        },
+        "harm_referent": {
+          "anyOf": [
+            {
+              "enum": [
+                "human",
+                "non_human",
+                "unknown"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Harm Referent"
+        },
+        "harm_state": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Harm State"
+        },
+        "humor_safety_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Humor Safety Required"
+        },
+        "implicit_sarcasm": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Implicit Sarcasm"
+        },
+        "literal_harm": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Literal Harm"
+        },
+        "provider_used": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provider Used"
+        },
+        "provider_validation_error_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provider Validation Error Count"
+        },
+        "required_canonical_candidate_issue_codes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Canonical Candidate Issue Codes",
+          "type": "array"
+        },
+        "required_material_categories": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Material Categories",
+          "type": "array"
+        },
+        "required_provider_validation_errors": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Provider Validation Errors",
+          "type": "array"
+        },
+        "required_reply_unresolved_categories": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Reply Unresolved Categories",
+          "type": "array"
+        },
+        "required_source_event_affected_types": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Source Event Affected Types",
+          "type": "array"
+        },
+        "required_source_event_assertion_states": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Source Event Assertion States",
+          "type": "array"
+        },
+        "required_source_event_evidence_spans": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Source Event Evidence Spans",
+          "type": "array"
+        },
+        "required_source_event_types": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Source Event Types",
+          "type": "array"
+        },
+        "required_source_unresolved_categories": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Source Unresolved Categories",
+          "type": "array"
+        },
+        "required_source_unresolved_spans": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Source Unresolved Spans",
+          "type": "array"
+        },
+        "required_unresolved_after_reconciliation": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Required Unresolved After Reconciliation",
+          "type": "array"
+        },
+        "semantic_candidate_eligible": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Semantic Candidate Eligible"
+        },
+        "sensitive_context": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sensitive Context"
+        },
+        "shell_operator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Shell Operator"
+        },
+        "suitable_for_humor": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Suitable For Humor"
+        },
+        "text_appears_humorous": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text Appears Humorous"
+        }
+      },
+      "title": "HoldoutExpectation",
+      "type": "object"
+    },
+    "SemanticCoverage": {
+      "additionalProperties": false,
+      "description": "Coverage accounting for every material clause.",
+      "properties": {
+        "clause_span": {
+          "minLength": 1,
+          "title": "Clause Span",
+          "type": "string"
+        },
+        "complete": {
+          "default": true,
+          "title": "Complete",
+          "type": "boolean"
+        },
+        "consumed_spans": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Consumed Spans",
+          "type": "array"
+        },
+        "unresolved_categories": {
+          "default": [],
+          "items": {
+            "enum": [
+              "possible_harm",
+              "possible_evaluation",
+              "possible_reduction",
+              "unknown_predicate",
+              "unknown_referent",
+              "other"
+            ],
+            "type": "string"
+          },
+          "title": "Unresolved Categories",
+          "type": "array"
+        },
+        "unresolved_spans": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Unresolved Spans",
+          "type": "array"
+        }
+      },
+      "required": [
+        "clause_span"
+      ],
+      "title": "SemanticCoverage",
+      "type": "object"
+    },
+    "SemanticCoverageResolution": {
+      "additionalProperties": false,
+      "description": "Provider proposal for one deterministic unresolved coverage item.",
+      "properties": {
+        "category": {
+          "enum": [
+            "possible_harm",
+            "possible_evaluation",
+            "possible_reduction",
+            "unknown_referent",
+            "unknown_predicate"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "clause_span": {
+          "minLength": 1,
+          "title": "Clause Span",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "typed_relation",
+            "harmless",
+            "unresolved"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "evidence_spans": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Spans",
+          "type": "array"
+        },
+        "reason": {
+          "default": "",
+          "title": "Reason",
+          "type": "string"
+        },
+        "side": {
+          "enum": [
+            "source",
+            "reply"
+          ],
+          "title": "Side",
+          "type": "string"
+        },
+        "unresolved_span": {
+          "minLength": 1,
+          "title": "Unresolved Span",
+          "type": "string"
+        }
+      },
+      "required": [
+        "side",
+        "clause_span",
+        "unresolved_span",
+        "category",
+        "disposition"
+      ],
+      "title": "SemanticCoverageResolution",
+      "type": "object"
+    },
+    "SemanticEntity": {
+      "additionalProperties": false,
+      "description": "Typed entity reference emitted only by semantic extraction.",
+      "properties": {
+        "canonical_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Canonical Name"
+        },
+        "confidence": {
+          "default": "low",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "entity_type": {
+          "default": "unknown",
+          "enum": [
+            "person",
+            "group_of_people",
+            "technical_system",
+            "software_process",
+            "product",
+            "company_or_organization",
+            "crypto_or_protocol",
+            "business_or_financial_object",
+            "legal_or_political_object",
+            "physical_event",
+            "abstract_concept",
+            "unknown"
+          ],
+          "title": "Entity Type",
+          "type": "string"
+        },
+        "text_span": {
+          "minLength": 1,
+          "title": "Text Span",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text_span"
+      ],
+      "title": "SemanticEntity",
+      "type": "object"
+    },
+    "SemanticEvent": {
+      "additionalProperties": false,
+      "description": "Typed predicate/referent relation; proximity alone is never an outcome.",
+      "properties": {
+        "actor": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SemanticEntity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "affected_entity": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SemanticEntity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "assertion_state": {
+          "default": "asserted",
+          "enum": [
+            "asserted",
+            "negated",
+            "possible",
+            "planned",
+            "feared",
+            "reported",
+            "conditional",
+            "historical_comparison",
+            "unknown"
+          ],
+          "title": "Assertion State",
+          "type": "string"
+        },
+        "event_id": {
+          "minLength": 1,
+          "title": "Event Id",
+          "type": "string"
+        },
+        "event_type": {
+          "default": "unknown",
+          "enum": [
+            "success",
+            "failure",
+            "technical_failure",
+            "business_failure",
+            "death",
+            "serious_injury",
+            "critical_condition",
+            "hospitalization",
+            "intensive_care",
+            "permanent_injury",
+            "non_survival",
+            "displacement",
+            "evacuation",
+            "damage",
+            "abuse",
+            "self_harm",
+            "personal_tragedy",
+            "other",
+            "unknown"
+          ],
+          "title": "Event Type",
+          "type": "string"
+        },
+        "evidence_spans": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Spans",
+          "type": "array"
+        },
+        "explicit_outcome": {
+          "default": false,
+          "title": "Explicit Outcome",
+          "type": "boolean"
+        },
+        "object": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SemanticEntity"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "polarity": {
+          "default": "unknown",
+          "enum": [
+            "positive",
+            "negative",
+            "neutral",
+            "unknown"
+          ],
+          "title": "Polarity",
+          "type": "string"
+        },
+        "predicate": {
+          "minLength": 1,
+          "title": "Predicate",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "predicate"
+      ],
+      "title": "SemanticEvent",
+      "type": "object"
+    },
+    "SemanticInspection": {
+      "additionalProperties": false,
+      "description": "Canonical semantic intermediate representation used by application adjudication.",
+      "properties": {
+        "evaluations": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/EvaluationRelation"
+          },
+          "title": "Evaluations",
+          "type": "array"
+        },
+        "extraction_conflicts": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Extraction Conflicts",
+          "type": "array"
+        },
+        "reply_coverage": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticCoverage"
+          },
+          "title": "Reply Coverage",
+          "type": "array"
+        },
+        "reply_entities": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticEntity"
+          },
+          "title": "Reply Entities",
+          "type": "array"
+        },
+        "reply_events": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticEvent"
+          },
+          "title": "Reply Events",
+          "type": "array"
+        },
+        "reply_self_reference": {
+          "default": false,
+          "title": "Reply Self Reference",
+          "type": "boolean"
+        },
+        "reply_shells": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticReplyShell"
+          },
+          "title": "Reply Shells",
+          "type": "array"
+        },
+        "source_coverage": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticCoverage"
+          },
+          "title": "Source Coverage",
+          "type": "array"
+        },
+        "source_entities": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticEntity"
+          },
+          "title": "Source Entities",
+          "type": "array"
+        },
+        "source_events": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticEvent"
+          },
+          "title": "Source Events",
+          "type": "array"
+        },
+        "unresolved_material": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Unresolved Material",
+          "type": "array"
+        }
+      },
+      "title": "SemanticInspection",
+      "type": "object"
+    },
+    "SemanticProviderProposal": {
+      "additionalProperties": false,
+      "description": "Typed provider extraction proposal without policy or publication authority.",
+      "properties": {
+        "coverage_resolutions": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticCoverageResolution"
+          },
+          "title": "Coverage Resolutions",
+          "type": "array"
+        },
+        "inspection": {
+          "$ref": "#/$defs/SemanticInspection"
+        },
+        "remaining_unresolved_items": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SemanticCoverageResolution"
+          },
+          "title": "Remaining Unresolved Items",
+          "type": "array"
+        }
+      },
+      "title": "SemanticProviderProposal",
+      "type": "object"
+    },
+    "SemanticReplyShell": {
+      "additionalProperties": false,
+      "description": "Canonical semantic operator and role slots for reply diversity.",
+      "properties": {
+        "complement_span": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Complement Span"
+        },
+        "decoration_span": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Decoration Span"
+        },
+        "evidence_spans": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Spans",
+          "type": "array"
+        },
+        "generic_reusability": {
+          "default": false,
+          "title": "Generic Reusability",
+          "type": "boolean"
+        },
+        "opener_family": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Opener Family"
+        },
+        "operator": {
+          "default": "none",
+          "enum": [
+            "identity",
+            "reduction",
+            "decorated_identity",
+            "repackaging",
+            "inverse_praise",
+            "reveal",
+            "setup_twist",
+            "none",
+            "unknown"
+          ],
+          "title": "Operator",
+          "type": "string"
+        },
+        "repackaging_marker": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Repackaging Marker"
+        },
+        "subject_span": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject Span"
+        }
+      },
+      "title": "SemanticReplyShell",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Versioned external-holdout payload.",
+  "properties": {
+    "cases": {
+      "items": {
+        "$ref": "#/$defs/HoldoutCase"
+      },
+      "minItems": 1,
+      "title": "Cases",
+      "type": "array"
+    },
+    "holdout_id": {
+      "minLength": 1,
+      "title": "Holdout Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "2.0",
+      "title": "Schema Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "holdout_id",
+    "cases"
+  ],
+  "title": "HoldoutDocument",
+  "type": "object"
+}

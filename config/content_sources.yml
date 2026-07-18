@@ -1,0 +1,56 @@
+sources:
+  home_timeline:
+    enabled: true
+    weight: 0.5
+    max_posts: 5
+    exclude_replies: true
+    exclude_retweets: true
+  recent_search:
+    enabled: false
+    weight: 0.25
+    queries: []
+    max_posts_per_query: 10
+  x_activity:
+    enabled: true
+    weight: 0.5
+  selected_accounts:
+    enabled: true
+    weight: 0.1
+    usernames: []
+    user_ids: []
+    list_ids: []
+    preferred_categories: []
+    accounts: []
+    max_posts_per_account: 5
+  manual:
+    enabled: true
+    weight: 0.1
+    creator_inspiration_reference_url: https://x.com/i/jf/creators/inspiration/top_posts
+  evergreen:
+    enabled: true
+    weight: 0.05
+    topics: []
+automatic_discovery:
+  enabled: true
+  interval_preset: 12h
+  custom_interval_minutes: 10
+  max_runs_per_utc_day: 5
+  lookback_hours: 24
+  trends_woeid: 1
+  max_trends: 3
+  trend_topics_per_run: 1
+  max_total_posts: 15
+  final_candidates: 5
+  generation_candidates_per_run: 5
+  drafts_per_run: 1
+  notify_when_no_candidate: true
+ranking:
+  source_priority: 0.35
+  recency_score: 0.2
+  engagement_velocity: 0.15
+  topic_relevance: 0.15
+  novelty_score: 0.1
+  media_potential: 0.05
+  plagiarism_risk: 1.0
+  safety_risk: 1.0
+  engagement_age_floor_hours: 1.0
