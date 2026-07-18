@@ -19,6 +19,7 @@ The central workspace combines source discovery, durable chat history, generated
 Email OTP sign-in creates an isolated local workspace. Account configuration, source history, drafts, credentials, and the personal voice profile stay bound to that account.
 
 ![Vouch passwordless email login](docs/assets/email-login.png)
+<img width="1280" height="632" alt="image" src="https://github.com/user-attachments/assets/d86bf3a8-97d0-4271-9601-67d4c45a2925" />
 
 ### Deliberate publication controls
 
