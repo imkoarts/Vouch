@@ -16,6 +16,7 @@ ALLOWED_ROOT_FILES = frozenset(
     {
         ".dockerignore",
         ".env.example",
+        ".gitattributes",
         ".gitignore",
         ".pre-commit-config.yaml",
         "AGENTS.md",
