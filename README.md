@@ -1,5 +1,83 @@
 # Vouch
 
+Built with GPT-5.6 and OpenAI Codex
+
+Vouch was built with GPT-5.6 in ChatGPT and OpenAI Codex. GPT-5.6 is also used inside the product itself.
+
+### How Vouch uses GPT-5.6
+
+Vouch uses GPT-5.6 through the OpenAI API for the parts of the workflow that require semantic judgment:
+
+- analyzing source material and its context;
+- deciding whether there is enough material for a useful post;
+- selecting a supported content angle;
+- generating and ranking distinct draft candidates;
+- separating factual claims, attribution, interpretation, and opinion;
+- connecting claims to their supporting sources;
+- detecting unsupported details, missing context, and weak editorial value;
+- revising drafts after validation or human edits;
+- adapting the result to the user's personal writing style.
+
+Model responses use structured schemas so Vouch can validate and store the results instead of treating free-form text as application state.
+
+GPT-5.6 does not control publication. Vouch separately checks the source references, draft version, approval state, and publication hash. A human still reviews and approves the exact version that can be published.
+
+### How GPT-5.6 and ChatGPT were used during development
+
+I started building Vouch in ChatGPT with GPT-5.6.
+
+I used it for:
+
+- the original product idea and architecture;
+- the web and desktop interface design;
+- backend services and integrations;
+- the generation, validation, and humanizer systems;
+- technical specifications for new versions;
+- regression cases based on real failures;
+- test planning and release audits;
+- documentation and submission materials.
+
+The process was not a single prompt followed by a finished product.
+
+I tested Vouch in real workflows, found where the output or application behavior was wrong, and wrote new requirements. Those failures became code changes, tests, validation rules, or new product decisions.
+
+This happened repeatedly across the whole project.
+
+### How OpenAI Codex was used
+
+I also used Codex throughout development, and relied on it more heavily as the repository became larger and the final changes started affecting many parts of the application at once.
+
+Codex was especially useful for:
+
+- tracing behavior across connected services;
+- implementing changes across the backend, database, configuration, UI, and tests;
+- debugging problems from application and CI logs;
+- updating migrations and release files;
+- keeping the web app, desktop app, Telegram bot, background workers, and X integration consistent;
+- running and fixing the linting, formatting, typing, testing, packaging, and security pipeline;
+- reviewing the final public repository and release artifacts.
+
+The work was not divided into a clean “ChatGPT did this, Codex did that” structure. I often used both on the same feature.
+
+ChatGPT was useful for working through the product behavior and turning rough ideas or failures into detailed requirements. Codex made it faster to apply, inspect, and verify those changes across the repository.
+
+### Development loop
+
+A normal development cycle looked like this:
+
+1. I found a problem or decided how a feature should work.
+2. I described the expected behavior and constraints in ChatGPT or Codex.
+3. GPT-5.6 helped turn the requirement into a concrete plan and implementation.
+4. ChatGPT or Codex helped write and review the code.
+5. I tested the result in the real application.
+6. Failures became regression tests, product rules, or additional fixes.
+7. I ran another audit before preparing the next release.
+
+I made the product decisions, tested the real workflows, reviewed the output, and decided what needed to change.
+
+GPT-5.6 and Codex helped produce the design, application code, integrations, content pipeline, tests, documentation, and release process that make up Vouch today.
+
+
 **A local-first editorial workspace for turning X source signals into reviewable, accountable drafts.**
 
 Vouch reads selected X sources, preserves the original evidence, proposes drafts in a personal voice, and keeps a human in control of every approval and publication decision. It is built for creators and small editorial teams who want AI assistance without surrendering authorship or publishing authority.
